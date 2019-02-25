@@ -1,0 +1,766 @@
+﻿using AlphaPoint_QA.Common;
+using AlphaPoint_QA.Utils;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using Xunit;
+
+namespace AlphaPoint_QA.Pages
+{
+    class BuyAndSellPage
+    {
+        private string value;
+        ProgressLogger logger;
+        static Config data;
+        public static IWebDriver driver;
+
+        By bTCBalances = By.XPath("//h3[@class=' buy-sell-balances__title']//following::div[1]//div[1]//span");
+        By usdBalances = By.XPath("//h3[@class=' buy-sell-balances__title']//following::div[1]//div[2]//span");
+        By radiouButtonOf100USD = By.XPath("//div[@class='buy-sell__amount-container']//div[@class='buy-sell__amount-row'][1]//label");
+        By buyButtonOption = By.XPath("//div[@class='buy-sell__tab buy-sell__tab--buy-selected']");
+        By sellButtonOption = By.XPath("//div[@class='buy-sell__tab buy-sell__tab--sell-selected']");
+        By makeTransactionOption = By.XPath("//div[@class='buy-sell-make-transaction']");
+        By chartOption = By.XPath("//div[@class='chart price-history']");
+        By buySelltextField = By.XPath("//div[@class='buy-sell__amount-row buy-sell__amount-row--two-inputs-layout']//div[2]//input");
+        By fifthRadioButton = By.XPath("//label[@class='ap-radio__label' and @for='custom']//span[1]");
+        By radioButton100Dollar = By.XPath("//div[@class='ap-radio']//label[@class='ap-radio__label' and @for='100']//span[2]");
+        By radioButton200Dollar = By.XPath("//div[@class='ap-radio']//label[@class='ap-radio__label' and @for='200']//span[2]");
+
+        By priceValue = By.XPath("//div[@class='buy-sell-order-overview__content']//div//span[@data-test='Price']");
+        By transactionCostValue = By.XPath("//div[@class='buy-sell-order-overview__content']//div//span[@data-test='Transaction Cost']");
+        By btcToBuyValue = By.XPath("//div[@class='buy-sell-order-overview__content']//div//span[@data-test='BTC to Buy']");
+        By btcToSellValue = By.XPath("//div[@class='buy-sell-order-overview__content']//div//span[@data-test='BTC to Sell']");
+        By feeValue = By.XPath("//div[@class='buy-sell-order-overview__content']//div//span[@data-test='Fee']");
+
+        By selected100DollarUSD = By.XPath("//div[@class='buy-sell__amount-row']//div[text()='$100']");
+        By selectedBTCToBuy = By.XPath("//div[@class='buy-sell__amount-container']//div[@class='buy-sell__amount-row']//div[text()='$100']//following::p[@class='buy-sell__arrow'][1]//following::div[1]");
+        By buyBitcoinWithUSDButton = By.XPath("//button[@class='ap-button__btn ap-button__btn--additive buy-sell__btn buy-sell__btn--additive']");
+        By sellBitcoinWithUSDButton = By.XPath("//button[@class='ap-button__btn ap-button__btn--subtractive buy-sell__btn buy-sell__btn--subtractive']");
+
+
+        By confirmBuyOrderButton = By.XPath("//button[text()='Confirm Buy Order']");
+        By confirmSellOrderButton = By.XPath("//button[text()='Confirm Sell Order']");
+        By oKBuyButton = By.XPath("//button[text()='OK']");
+        By okSellButton = By.XPath("//button[@class='ap-button__btn ap-button__btn--general ap-modal buy-sell-order-confirmation__modal__btn ap-modal buy-sell-order-confirmation__modal__btn--general']");
+        By buyAndSellMenuButton = By.XPath("//div[@class='page-header-nav__menu-toggle']");
+        By buyAndSellButton = By.XPath("//a[@href='/buy-sell']");
+
+        By sellButton = By.XPath("//span[@class='isvg loaded ap-icon ap-icon--sell ap-icon--big buy-sell__icon buy-sell__icon--sell buy-sell__icon--big']");
+        By selectedBTCToSell = By.XPath("//div[@class='buy-sell__amount-container']//div[@class='buy-sell__amount-row']//div[text()='$100']//following::p[@class='buy-sell__arrow'][1]//following::div[1]");
+        By successMsg = By.XPath("//h3[@class='buy-sell-order-confirmation__header']");
+
+        //locators for Confirm BuyToBTC order window
+
+        By btcToBuyValueOnConfirmOrder = By.XPath("//h3[text()='Confirmation']//following::div[2]//span[@data-test='BTC to Buy']");
+        By btcToSellValueOnConfirmOrder = By.XPath("//h3[text()='Confirmation']//following::div[2]//span[@data-test='BTC to Sell']");
+        By LimitPriceValueOnConfirmOrder = By.XPath("//h3[text()='Confirmation']//following::div[3]//span[@data-test='Limit Price']");
+        By feeValueOnConfirmOrder = By.XPath("//h3[text()='Confirmation']//following::div[4]//span[@data-test='Fee']");
+        By finalQtyValueOnConfirmOrder = By.XPath("//h3[text()='Confirmation']//following::div[5]//span[@data-test='Final Quantity']");
+        By dateTimeValueOnConfirmOrder = By.XPath("//h3[text()='Confirmation']//following::div[6]//span[@data-test='Date']");
+
+        public object Testdata { get; private set; }
+
+        public BuyAndSellPage(ProgressLogger logger)
+        {
+            this.logger = logger;
+            data = ConfigManager.Instance;
+            driver = AlphaPointWebDriver.GetInstanceOfAlphaPointWebDriver();
+        }
+
+        public IWebElement BtcToBuyValueOnConfirmOrder()
+        {
+            return driver.FindElement(btcToBuyValueOnConfirmOrder);
+        }
+
+        public IWebElement SuccessMsg()
+        {
+            return driver.FindElement(successMsg);
+        }
+
+        public IWebElement BtcToSellValueOnConfirmOrder()
+        {
+            return driver.FindElement(btcToSellValueOnConfirmOrder);
+        }
+
+        public IWebElement BuyLimitPriceValueOnConfirmOrder()
+        {
+            return driver.FindElement(LimitPriceValueOnConfirmOrder);
+        }
+
+        public IWebElement FeeValueOnConfirmOrder()
+        {
+            return driver.FindElement(feeValueOnConfirmOrder);
+        }
+
+        public IWebElement FinalQtyValueOnConfirmOrder()
+        {
+            return driver.FindElement(finalQtyValueOnConfirmOrder);
+        }
+
+        public IWebElement DateTimeValueOnConfirmOrder()
+        {
+            return driver.FindElement(dateTimeValueOnConfirmOrder);
+        }
+
+        public IWebElement SellButton()
+        {
+            return driver.FindElement(sellButton);
+        }
+
+        public IWebElement BuyAndSellButton()
+        {
+            return driver.FindElement(buyAndSellButton);
+        }
+
+        public IWebElement SelectedBTCToSell()
+        {
+            return driver.FindElement(selectedBTCToSell);
+        }
+
+        public IWebElement SellBitcoinWithUSDButton()
+        {
+            return driver.FindElement(sellBitcoinWithUSDButton);
+        }
+
+        public IWebElement BuyBitcoinWithUSDButton()
+        {
+            return driver.FindElement(buyBitcoinWithUSDButton);
+        }
+
+        public IWebElement BuyAndSellMenuButton()
+        {
+            return driver.FindElement(buyAndSellMenuButton);
+        }
+
+        public IWebElement OKBuyButton()
+        {
+            return driver.FindElement(oKBuyButton);
+        }
+
+        public IWebElement OKSellButton()
+        {
+            return driver.FindElement(okSellButton);
+        }
+
+        public IWebElement ConfirmBuyOrderButton()
+        {
+            return driver.FindElement(confirmBuyOrderButton);
+        }
+
+        public IWebElement ConfirmSellOrderButton()
+        {
+            return driver.FindElement(confirmSellOrderButton);
+        }
+
+        public IWebElement selected100USD()
+        {
+            return driver.FindElement(selected100DollarUSD);
+        }
+        public IWebElement SelectedBTCToBuy()
+        {
+            return driver.FindElement(selectedBTCToBuy);
+        }
+
+        public IWebElement PriceValue()
+        {
+            return driver.FindElement(priceValue);
+        }
+        public IWebElement TransactionCostValue()
+        {
+            return driver.FindElement(transactionCostValue);
+        }
+        public IWebElement BTCToBuyValue()
+        {
+            return driver.FindElement(btcToBuyValue);
+        }
+
+        public IWebElement BTCToSellValue()
+        {
+            return driver.FindElement(btcToSellValue);
+        }
+
+        public IWebElement FeeValue()
+        {
+            return driver.FindElement(feeValue);
+        }
+
+        public IWebElement BTCBalances()
+        {
+            return driver.FindElement(bTCBalances);
+        }
+
+        public IWebElement RadioButton100Dollar()
+        {
+            return driver.FindElement(radioButton100Dollar);
+        }
+
+        public IWebElement RadioButton200Dollar()
+        {
+            return driver.FindElement(radioButton200Dollar);
+        }
+
+        public IWebElement FifthRadioButton()
+        {
+            return driver.FindElement(fifthRadioButton);
+        }
+
+        public IWebElement USDBalances()
+        {
+            return driver.FindElement(usdBalances);
+        }
+
+        public IWebElement RadiouButtonOf100USD()
+        {
+            return driver.FindElement(radiouButtonOf100USD);
+        }
+
+        public IWebElement BuyButtonOption()
+        {
+            return driver.FindElement(buyButtonOption);
+        }
+
+        public IWebElement SellButtonOption()
+        {
+            return driver.FindElement(sellButtonOption);
+        }
+
+        public IWebElement MakeTransactionOption()
+        {
+            return driver.FindElement(makeTransactionOption);
+        }
+
+        public IWebElement ChartOption()
+        {
+            return driver.FindElement(chartOption);
+        }
+
+        public IWebElement BuySelltextField()
+        {
+            return driver.FindElement(buySelltextField);
+        }
+
+
+        public void SellBtn()
+        {
+            try
+            {
+                Thread.Sleep(2000);
+                UserSetFunctions.Click(SellButton());
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
+        //This method will click on first radio button with having option $100
+        private void RadioBtn()
+        {
+            try
+            {
+                Actions action = new Actions(driver);
+                action.MoveToElement(RadioButton100Dollar()).Build().Perform();
+                UserSetFunctions.Click(RadioButton100Dollar());
+
+                Thread.Sleep(1000);
+
+                action.MoveToElement(RadioButton200Dollar()).Build().Perform();
+                UserSetFunctions.Click(RadioButton200Dollar());
+
+                Thread.Sleep(1000);
+                action.MoveToElement(RadioButton100Dollar()).Build().Perform();
+                UserSetFunctions.Click(RadioButton100Dollar());
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private String CalculateFee(string selectedBTCToBuyStringValue)
+        {
+            double feeConstant = Double.Parse(TestData.GetData("FeeComponent"));
+            var fee = Double.Parse(selectedBTCToBuyStringValue) * feeConstant;
+            //fee.ToString("N9");
+            var feeDouble = GenericUtils.ConvertToDoubleFormat(fee);
+            string fees = feeDouble.ToString().Substring(0, 10);
+            return fees;
+        }
+
+        private String GetBuyBitcoinQuantity(double bTCBalanceInDoubleValue, double selectedBTCToBuyDoubleValue, string feeValue)
+        {
+            double fee = double.Parse(feeValue);
+            var FinalBTCQuantity = (bTCBalanceInDoubleValue + selectedBTCToBuyDoubleValue) - fee;
+            return FinalBTCQuantity.ToString();
+        }
+
+        private string GetBuyUSDBalances(string usdBalance)
+        {
+            Decimal usdDeductionAmount = Decimal.Parse(TestData.GetData("TC42_USDDeductionAmount"));
+            Decimal usdBalanceDouble = Decimal.Parse(usdBalance);
+
+            var finalUSDBal = usdBalanceDouble - usdDeductionAmount;
+            return finalUSDBal.ToString();
+        }
+
+
+        private String GetSellBitcoinQuantity(double bTCBalanceInDoubleValue, double selectedBTCToBuyDoubleValue)
+        {
+            var FinalBTCQuantity = bTCBalanceInDoubleValue - selectedBTCToBuyDoubleValue;
+            return FinalBTCQuantity.ToString();
+        }
+
+        private string GetSellUSDBalances(string usdBalance, string feeValue)
+        {
+            Decimal fee = Decimal.Parse(feeValue);
+            Decimal usdDeductionAmount = Decimal.Parse(TestData.GetData("TC42_USDDeductionAmount"));
+            Decimal usdBalanceDouble = Decimal.Parse(usdBalance);
+
+            var FinalUSDBal = ((usdBalanceDouble + usdDeductionAmount)- (fee + Decimal.Parse(TestData.GetData("TC42_USDExtraDeductionAmount"))));
+
+            return FinalUSDBal.ToString();
+        }
+
+        public Dictionary<string, string> GetBuyConfirmationOverView()
+        {
+            Dictionary<string, string> buyConfirmationOverViewDict = new Dictionary<string, string>();
+            Thread.Sleep(2000);
+            buyConfirmationOverViewDict.Add("BTCToBuy", BtcToBuyValueOnConfirmOrder().Text);
+            buyConfirmationOverViewDict.Add("LimitPrice", TransactionCostValue().Text);
+            buyConfirmationOverViewDict.Add("Fee", FeeValueOnConfirmOrder().Text);
+            buyConfirmationOverViewDict.Add("FinalQantity", FinalQtyValueOnConfirmOrder().Text);
+            buyConfirmationOverViewDict.Add("Date", DateTimeValueOnConfirmOrder().Text);
+            return buyConfirmationOverViewDict;
+        }
+
+        public Dictionary<string, string> GetSellConfirmationOverView()
+        {
+            Dictionary<string, string> sellConfirmationOverViewDict = new Dictionary<string, string>();
+            Thread.Sleep(2000);
+            sellConfirmationOverViewDict.Add("BTCToSell", BtcToSellValueOnConfirmOrder().Text);
+            sellConfirmationOverViewDict.Add("LimitPrice", TransactionCostValue().Text);
+            sellConfirmationOverViewDict.Add("Fee", FeeValueOnConfirmOrder().Text);
+            sellConfirmationOverViewDict.Add("FinalQantity", FinalQtyValueOnConfirmOrder().Text);
+            sellConfirmationOverViewDict.Add("Date", DateTimeValueOnConfirmOrder().Text);            
+            return sellConfirmationOverViewDict;
+        }
+
+        public Dictionary<string, string> GetBuyTransactionOverView()
+        {
+            Dictionary<string, string> transactionOverviewDetailsDict = new Dictionary<string, string>();
+            Thread.Sleep(2000);
+            transactionOverviewDetailsDict.Add("Price", PriceValue().Text);
+            transactionOverviewDetailsDict.Add("TransactionCost", TransactionCostValue().Text);
+            transactionOverviewDetailsDict.Add("BTCToBuy", BTCToBuyValue().Text);
+            transactionOverviewDetailsDict.Add("Fee", FeeValue().Text);
+            return transactionOverviewDetailsDict;
+        }
+
+        public Dictionary<string, string> GetSellTransactionOverView()
+        {
+            Dictionary<string, string> transactionOverviewDetailsDict = new Dictionary<string, string>();
+            Thread.Sleep(2000);
+            transactionOverviewDetailsDict.Add("Price", PriceValue().Text);
+            transactionOverviewDetailsDict.Add("TransactionCost", TransactionCostValue().Text);
+            transactionOverviewDetailsDict.Add("BTCToSell", BTCToSellValue().Text);
+            transactionOverviewDetailsDict.Add("Fee", FeeValue().Text);
+            return transactionOverviewDetailsDict;
+        }
+
+        //This will place an buy order in BuyAndSell page
+        public void PlaceBuyOrder(string instrument,string side)
+        {
+                       
+            VerifyOrdersTab objVerifyOrdersTab = new VerifyOrdersTab(driver, logger);
+            string bTCBalanceTextValue = BTCBalances().Text;
+            double bTCBalanceInDoubleValue = Double.Parse(bTCBalanceTextValue);
+            string actualBTCBalance = GenericUtils.ConvertToDoubleFormat(bTCBalanceInDoubleValue);
+
+
+            string usdBalanceTextValue = USDBalances().Text;
+            string usdBalance = usdBalanceTextValue.Split("$")[1];
+            Thread.Sleep(1000);
+            RadioBtn();
+            Thread.Sleep(1000);
+            var transactionOverviewDetails = GetBuyTransactionOverView();
+            var priceText = transactionOverviewDetails["Price"].Split(" ")[0];
+            string USDCurrency = TestData.GetData("USDCurrency");
+            string selected100DollarTextValue = selected100USD().Text;
+            string selected100DollarPrice = selected100DollarTextValue.Split("$")[1];
+            Double selected100DollarDoublePrice = Double.Parse(selected100DollarPrice);
+            string selected100DollarPriceValue = GenericUtils.ConvertToDoubleFormat(selected100DollarDoublePrice) +" "+ USDCurrency;
+
+            string selectedBTCToBuyTextValue = SelectedBTCToBuy().Text;
+            string feeCurrency = TestData.GetData("CurrencyName");
+            Double selectedBTCToBuyDoubleValue = Double.Parse(selectedBTCToBuyTextValue);
+            string selectedBTCToBuyStringValue = GenericUtils.ConvertToDoubleFormat(selectedBTCToBuyDoubleValue);
+
+            string feeValue = CalculateFee(selectedBTCToBuyStringValue);
+            string feeValues = feeValue + " " + feeCurrency;
+            string btcToBuyAmount = SelectedBTCToBuy().Text;
+
+            Thread.Sleep(1000);
+            if (transactionOverviewDetails["TransactionCost"].Contains(selected100DollarPriceValue) 
+                && transactionOverviewDetails["BTCToBuy"].Contains(selectedBTCToBuyStringValue) 
+                && transactionOverviewDetails["Fee"].Contains(feeValues))
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.TransactionOverviewDetailsPassed, side));
+                UserSetFunctions.Click(BuyBitcoinWithUSDButton());
+            }
+            else
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.TransactionOverviewDetailsFailed, side));
+            }
+                       
+            string placeOrderTime = GenericUtils.GetCurrentTime();
+            string placeOrderTimePlusOneMin = GenericUtils.GetCurrentTimePlusOneMinute();          
+            string limitPriceOnConfirmationOrderValue =  GenericUtils.ConvertDoubleToString(selected100DollarDoublePrice)+" "+ USDCurrency;
+            string feeOnConfirmationOrderValue = feeCurrency + " " + feeValue;
+   
+            string finalQtyDiff = GenericUtils.GetDifferenceFromStringAfterSubstraction(btcToBuyAmount, feeValue);
+            var finalQtyConfirmationOrderValues = feeCurrency + " " + Decimal.Parse(finalQtyDiff).ToString("0.00");
+
+            Thread.Sleep(2000);
+            var buyConfirmationDetails = GetBuyConfirmationOverView();
+
+            if (buyConfirmationDetails["BTCToBuy"].Contains(btcToBuyAmount) 
+             && buyConfirmationDetails["LimitPrice"].Contains(selected100DollarPriceValue)
+             && buyConfirmationDetails["Fee"].Contains(feeOnConfirmationOrderValue) 
+             && buyConfirmationDetails["FinalQantity"].Contains(finalQtyConfirmationOrderValues)
+             && (buyConfirmationDetails["Date"].Contains(placeOrderTime) || buyConfirmationDetails["Date"].Contains(placeOrderTimePlusOneMin)))
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.ConfirmationModalDetailsPassed, side));                
+            }
+            else
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.ConfirmationModalDetailsFailed, side));
+            }
+
+            UserSetFunctions.Click(ConfirmBuyOrderButton());
+            string orderPlacedSuccessMsg = SuccessMsg().Text;
+
+            try
+            {
+                Assert.Equal(orderPlacedSuccessMsg, Const.SuccessBuySellOrderMsg);
+                logger.LogCheckPoint(String.Format(LogMessage.VerifiedBuySellOrderSuccessMsg, side));
+            }
+            catch (Exception)
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.VerifiedBuySellOrderFailedMsg, side));
+            }
+            Thread.Sleep(1000);
+            UserSetFunctions.Click(OKBuyButton());
+            UserSetFunctions.Click(BuyAndSellMenuButton());
+            UserCommonFunctions.SelectAnExchange(driver);
+            UserCommonFunctions.ScrollingDownVertical(driver);
+            Assert.True(objVerifyOrdersTab.VerifyFilledOrdersTabForBuyAndSell(instrument, side, Double.Parse(selectedBTCToBuyStringValue), feeValue, placeOrderTime, placeOrderTimePlusOneMin));
+
+            Thread.Sleep(1000);
+            UserCommonFunctions.DashBoardMenuButton(driver);
+            Thread.Sleep(1000);
+            UserSetFunctions.Click(BuyAndSellButton());
+            Thread.Sleep(1000);
+
+            string btcQty = GetBuyBitcoinQuantity(bTCBalanceInDoubleValue, selectedBTCToBuyDoubleValue, feeValue);
+            string usdBal = "$"+ GetBuyUSDBalances(usdBalance);
+
+            Thread.Sleep(1000);
+
+            string currentbTCQuantity = BTCBalances().Text;
+            string finalbTCQuantity = GenericUtils.RemoveCommaFromString(currentbTCQuantity);
+
+            string currentUSDBalance = USDBalances().Text;
+            string finalUSDBalance = GenericUtils.RemoveCommaFromString(currentUSDBalance);
+            string usdDeductionAmount = TestData.GetData("TC42_USDDeductionAmount");
+            try
+            {
+                Assert.Equal(currentbTCQuantity, btcQty);
+                logger.LogCheckPoint(String.Format(LogMessage.FinalBTCQantityPassed, side));
+            }
+
+            catch(Exception e)
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.FinalBTCQantityPassed, side));
+                throw e;
+            }
+
+            try
+            {
+                Assert.Equal(currentUSDBalance, usdBal);
+                logger.LogCheckPoint(String.Format(LogMessage.FinalUSDBalancePassed, side, usdDeductionAmount));
+            }
+
+            catch (Exception e)
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.FinalUSDBalanceFailed, side, usdDeductionAmount));
+                throw e;
+            }
+        }
+
+
+        //This will place an sell order in BuyAndSell page
+        public void PlaceSellOrder(string instrument, string side)
+        {
+
+            VerifyOrdersTab objVerifyOrdersTab = new VerifyOrdersTab(driver, logger);
+            string bTCBalanceTextValue = BTCBalances().Text;
+            string feeFactor = TestData.GetData("FeeComponent");
+            double bTCBalanceInDoubleValue = Double.Parse(bTCBalanceTextValue);
+            string actualBTCBalance = GenericUtils.ConvertToDoubleFormat(bTCBalanceInDoubleValue);
+
+
+            string usdBalanceTextValue = USDBalances().Text;
+            string usdBalance = usdBalanceTextValue.Split("$")[1];
+            Thread.Sleep(1000);
+            RadioBtn();
+            Thread.Sleep(1000);
+            var transactionOverviewDetails = GetSellTransactionOverView();
+            var priceText = transactionOverviewDetails["Price"].Split(" ")[0];//price amount without any tag
+            string USDCurrency = TestData.GetData("USDCurrency");
+            string selected100DollarTextValue = selected100USD().Text;
+            string selected100DollarPrice = selected100DollarTextValue.Split("$")[1];
+            Double selected100DollarDoublePrice = Double.Parse(selected100DollarPrice);//Limit amount without any tag(USD 100)
+            string selected100DollarPriceValue = GenericUtils.ConvertToDoubleFormat(selected100DollarDoublePrice) + " " + USDCurrency;
+
+            string selectedBTCToSellTextValue = SelectedBTCToSell().Text;
+            string feeCurrency = TestData.GetData("CurrencyName");
+            Double selectedBTCToSellDoubleValue = Double.Parse(selectedBTCToSellTextValue);//BTCTOSell amount without any tag
+            string selectedBTCToSellStringValue = GenericUtils.ConvertToDoubleFormat(selectedBTCToSellDoubleValue);
+
+            string feeValue = GenericUtils.SellFeeAmount(selectedBTCToSellStringValue, priceText, feeFactor);//Fee amount without any tag(USD fee)
+            string feeValues = feeValue + " " + USDCurrency;
+
+            Thread.Sleep(1000);
+            if (transactionOverviewDetails["TransactionCost"].Contains(selected100DollarPriceValue) && transactionOverviewDetails["BTCToSell"].Contains(selectedBTCToSellStringValue)
+             && transactionOverviewDetails["Fee"].Contains(feeValues))
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.TransactionOverviewDetailsPassed, side));
+                UserSetFunctions.Click(SellBitcoinWithUSDButton());
+            }
+            else
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.TransactionOverviewDetailsFailed, side));
+            }
+
+            string placeOrderTime = GenericUtils.GetCurrentTime();
+            string placeOrderTimePlusOneMin = GenericUtils.GetCurrentTimePlusOneMinute();
+            string limitPriceOnConfirmationOrderValue = GenericUtils.ConvertToDoubleFormat(selected100DollarDoublePrice) + " " + USDCurrency;
+            string feeOnConfirmationOrderValue = USDCurrency + " " + feeValue;
+            string btcToSellAmount = BtcToSellValueOnConfirmOrder().Text;
+            
+            var finalQtyConfirmationOrderValues = selected100DollarDoublePrice - double.Parse(feeValue);   
+            
+            Thread.Sleep(1000);
+            var finalQtyConfirmationOrderValue = USDCurrency + " " + GenericUtils.ConvertTo8DigitAfterDecimal(finalQtyConfirmationOrderValues);           
+            Thread.Sleep(2000);
+            var sellConfirmationDetails = GetSellConfirmationOverView();
+            if (sellConfirmationDetails["BTCToSell"].Contains(btcToSellAmount)
+                &&sellConfirmationDetails["LimitPrice"].Contains(limitPriceOnConfirmationOrderValue)
+                && sellConfirmationDetails["Fee"].Contains(feeOnConfirmationOrderValue)
+                && sellConfirmationDetails["FinalQantity"].Contains(finalQtyConfirmationOrderValue) 
+                && (sellConfirmationDetails["Date"].Contains(placeOrderTime) || sellConfirmationDetails["Date"].Contains(placeOrderTimePlusOneMin)))
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.ConfirmationModalDetailsPassed, side));
+            }
+            else
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.ConfirmationModalDetailsFailed, side));
+            }
+            UserSetFunctions.Click(ConfirmSellOrderButton());
+            string orderPlacedSuccessMsg = SuccessMsg().Text;
+
+            try
+            {
+                Assert.Equal(orderPlacedSuccessMsg, Const.SuccessBuySellOrderMsg);
+                logger.LogCheckPoint(String.Format(LogMessage.VerifiedBuySellOrderSuccessMsg, side));
+            }
+            catch(Exception)
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.VerifiedBuySellOrderFailedMsg, side));
+            }
+            Thread.Sleep(1000);
+            UserSetFunctions.Click(OKSellButton());
+            Thread.Sleep(1000);            
+            UserSetFunctions.Click(BuyAndSellMenuButton());
+            Thread.Sleep(1000);
+            UserCommonFunctions.SelectAnExchange(driver);
+            Thread.Sleep(1000);
+            UserCommonFunctions.ScrollingDownVertical(driver);
+            Assert.True(objVerifyOrdersTab.VerifyFilledOrdersTabForBuyAndSell(instrument, side, Double.Parse(selectedBTCToSellStringValue), feeValue, placeOrderTime, placeOrderTimePlusOneMin));
+
+            Thread.Sleep(1000);
+            UserCommonFunctions.DashBoardMenuButton(driver);
+            Thread.Sleep(1000);
+            UserSetFunctions.Click(BuyAndSellButton());
+            Thread.Sleep(1000);
+
+            string btcQty = GetSellBitcoinQuantity(bTCBalanceInDoubleValue, selectedBTCToSellDoubleValue);
+            string usdBal = "$" + GetSellUSDBalances(usdBalance, feeValue);
+
+            Thread.Sleep(1000);
+
+            string currentbTCQuantity = BTCBalances().Text;
+            string finalbTCQuantity = GenericUtils.RemoveCommaFromString(currentbTCQuantity);
+
+            string currentUSDBalance = USDBalances().Text;
+            string finalUSDBalance = GenericUtils.RemoveCommaFromString(currentUSDBalance);
+            string usdDeductionAmount = TestData.GetData("TC42_USDDeductionAmount");
+            try
+            {
+                Assert.Equal(finalbTCQuantity, btcQty);
+                logger.LogCheckPoint(String.Format(LogMessage.FinalBTCQantityPassed, side));
+            }
+
+            catch (Exception e)
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.FinalBTCQantityPassed, side));
+                throw e;
+            }
+
+            try
+            {
+                Assert.Equal(finalUSDBalance, usdBal);
+                logger.LogCheckPoint(String.Format(LogMessage.FinalUSDBalancePassed, side, usdDeductionAmount));
+            }
+
+            catch (Exception e)
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.FinalUSDBalanceFailed, side, usdDeductionAmount));
+                throw e;
+            }
+        }
+        //This method will verify the whether "Make A Transaction" option is present or not
+        public bool VerifyMakeATransaction()
+        {
+            bool flag = false;
+            
+            try
+            {
+                flag = true;
+                if(MakeTransactionOption().Displayed)
+                {
+                    logger.LogCheckPoint(String.Format(LogMessage.MakeATransactionOptionPassed));
+                }
+            }
+            catch (Exception e)
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.MakeATransactionOptionFailed));
+                throw e;
+            }
+            return flag;
+        }
+
+        //This method will verify the whether "Chart" option is present or not
+        public bool VerifyChart()
+        {
+            bool flag = false;
+
+            try
+            {
+                flag = true;
+                if (ChartOption().Displayed)
+                {
+                    logger.LogCheckPoint(String.Format(LogMessage.ChartOptionPassed));
+                }
+            }
+            catch (Exception e)
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.ChartOptionFailed));
+                throw e;
+            }
+            return flag;
+        }
+
+        //This method will verify the whether "Buy" option is selected by default or not
+        public bool VerifyBuyOption()
+        {
+            bool flag = false;
+
+            try
+            {
+                flag = true;
+                if (BuyButtonOption().Displayed)
+                {
+                    logger.LogCheckPoint(String.Format(LogMessage.BuyOptionPassed));
+                }
+            }
+            catch (Exception e)
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.BuyOptionFailed));
+                throw e;
+            }
+            return flag;
+        }
+
+        //This method will verify the whether "Sell" option is selected by default or not
+        public bool VerifySellOption()
+        {
+            bool flag = false;
+
+            try
+            {
+                flag = true;
+                if (SellButtonOption().Displayed)
+                {
+                    logger.LogCheckPoint(String.Format(LogMessage.SellOptionPassed));
+                }
+            }
+            catch (Exception e)
+            {
+                logger.LogCheckPoint(String.Format(LogMessage.SellOptionFailed));
+                throw e;
+            }
+            return flag;
+        }
+
+        //This method will verify the whether "fith Radio button" option is present or not
+        public bool VerifyFifthRadioButtonOption()
+        {
+            bool flag = false;
+            try
+            {
+                flag = true;
+                if (FifthRadioButton().Enabled)
+                {
+                    logger.LogCheckPoint(String.Format(LogMessage.FifthRadioButtonPassed));
+                }
+                else
+                {
+                    logger.LogCheckPoint(String.Format(LogMessage.FifthRadioButtonFailed));
+                }
+            }
+            catch (Exception e)
+            {               
+                throw e;
+            }
+            return flag;
+        }
+
+        //This method will verify the whether fith value with blank value is selected or not
+        public bool VerifyFifthWithBlankValues()
+        {
+            value = TestData.GetData("TC42_Value");
+            bool flag = false;
+
+            try
+            {
+                flag = true;
+                string str = BuySelltextField().GetAttribute(value);
+                if (str.Contains(""))
+                {
+                    logger.LogCheckPoint(String.Format(LogMessage.FifthWithBlankValuesPassed));
+                }
+                else
+                {
+                    logger.LogCheckPoint(String.Format(LogMessage.FifthWithBlankValuesFailed));
+                }
+            }
+            catch (Exception e)
+            {                
+                throw e;
+            }
+            return flag;
+        }
+    }
+}

@@ -1,0 +1,1 @@
+extent -i "D:\AlphaPoint_Demo\extenztreport\TestResults.xml" -o results/ -r html

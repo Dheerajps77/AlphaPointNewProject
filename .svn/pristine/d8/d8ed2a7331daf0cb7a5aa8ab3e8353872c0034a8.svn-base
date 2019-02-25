@@ -1,0 +1,297 @@
+﻿using System;
+using AlphaPoint_QA.Common;
+using AlphaPoint_QA.Pages;
+using AlphaPoint_QA.Utils;
+using Xunit;
+using Xunit.Abstractions;
+
+namespace AlphaPoint_QA.Test
+{
+
+    [Collection("Alphapoint_QA_USER")]
+    public class WalletsTest : TestBase
+    {
+
+        private string instrument;
+        private string currencyName;
+        private string comment;
+        private string amountOfBtcToSend;
+        private string withdrawStatus;
+        private string user12_EmailAddress;
+        private string user13_EmailAddress;
+
+        private string amountOfUSDToWithdraw;
+        private string fullName;
+        private string language;
+        private string bankAddress;
+        private string bankAccountNumber;
+        private string bankName;
+        private string swiftCode;
+
+
+        public WalletsTest(ITestOutputHelper output) : base(output)
+        {
+
+        }
+
+
+
+        [Fact]
+        public void TC37_WalletsSendToEmailAddress()
+        {
+            try
+            {
+                string username;
+                string secondUsername;
+                string currentBalance;
+                string withdrawSuccessMsg;
+                string updatedCurrentBalance;
+                string expectedupdateBalance;
+                string availableBalance;
+                string totalBalance;
+                string expectedTotalBalanceAfterSent;
+                string totalBalanceAfterSent;
+                string availableBalanceAfterSent;
+                string expectedAvailableBalanceAfterSent;
+                string availableBalanceOfFirstUser;
+                string totalBalanceOfFirstUser;
+
+                currencyName = TestData.GetData("CurrencyName");
+                comment = TestData.GetData("Comment");
+                amountOfBtcToSend = TestData.GetData("AmountOfBtcToSend");
+                withdrawStatus = TestData.GetData("WithdrawStatus");
+                user12_EmailAddress = TestData.GetData("User_12EmailAddress");
+                user13_EmailAddress = TestData.GetData("User_13EmailAddress");
+
+                TestProgressLogger.StartTest();
+                UserFunctions userFunctions = new UserFunctions(TestProgressLogger);
+                username = userFunctions.LogIn(TestProgressLogger, Const.USER12);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedInSuccessfully, Const.USER12));
+
+                UserCommonFunctions.DashBoardMenuButton(driver);
+                UserCommonFunctions.NavigateToWallets(driver);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.NavigateWalletsPage));
+
+                WalletPage walletpage = new WalletPage();
+                currentBalance = walletpage.GetInstrumentCurrentBalance(driver, currencyName);
+
+                walletpage.ClickInstrumentDetails(driver, currencyName);
+                walletpage.GetHoldAvailablePendingDepositTotalBalanceOnDetailsPage(driver);
+                availableBalanceOfFirstUser = walletpage.AvailableBalanceDetailsPage;
+                totalBalanceOfFirstUser = walletpage.TotalBalanceDetailsPage;
+
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.StoreCurrentBalance, Const.USER12));
+                userFunctions.LogOut();
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedOutSuccessfully, Const.USER12));
+
+                secondUsername = userFunctions.LogIn(TestProgressLogger, Const.USER13);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedInSuccessfully, Const.USER13));
+                UserCommonFunctions.DashBoardMenuButton(driver);
+                UserCommonFunctions.NavigateToWallets(driver);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.NavigateWalletsPage));
+
+                walletpage.ClickInstrumentDetails(driver, currencyName);
+                walletpage.GetHoldAvailablePendingDepositTotalBalanceOnDetailsPage(driver);
+                availableBalance = walletpage.AvailableBalanceDetailsPage;
+                totalBalance = walletpage.TotalBalanceDetailsPage;
+                walletpage.ClickSendButtonOnDetailsPage(driver);
+
+                walletpage.ClickOnEmailAddressTab(driver);
+                walletpage.SendBitCoinToEmailAddress(driver, comment, user12_EmailAddress, amountOfBtcToSend);
+                walletpage.VerifySendDetailsBalances(driver);
+                TestProgressLogger.LogCheckPoint(LogMessage.RemainingBalanceVerified);
+                walletpage.ClickOnSendBitCoin(driver);
+                walletpage.VerifyConfirmationModal(driver, user12_EmailAddress, amountOfBtcToSend);
+                TestProgressLogger.LogCheckPoint(LogMessage.VerifiedDetailsOnConfirmModal);
+                walletpage.ClickConfirmButton(driver);
+                TestProgressLogger.LogCheckPoint(LogMessage.ConfirmationModalVerified);
+                withdrawSuccessMsg = UserCommonFunctions.GetTextOfMessage(driver, TestProgressLogger);
+                Assert.Equal(Const.TransferSuccessMsg, withdrawSuccessMsg);
+                walletpage.CloseSendOrReciveSection(driver);
+
+
+                walletpage.GetHoldAvailablePendingDepositTotalBalanceOnDetailsPage(driver);
+                totalBalanceAfterSent = walletpage.TotalBalanceDetailsPage;
+                expectedTotalBalanceAfterSent = GenericUtils.GetDifferenceFromStringAfterSubstraction(totalBalance, amountOfBtcToSend);
+                Assert.Equal(expectedTotalBalanceAfterSent, GenericUtils.RemoveCommaFromString(totalBalanceAfterSent));
+                TestProgressLogger.LogCheckPoint(LogMessage.TotalBalanceVerified);
+
+                availableBalanceAfterSent = walletpage.AvailableBalanceDetailsPage;
+                expectedAvailableBalanceAfterSent = GenericUtils.GetDifferenceFromStringAfterSubstraction(totalBalance, amountOfBtcToSend);
+                Assert.Equal(expectedAvailableBalanceAfterSent, GenericUtils.RemoveCommaFromString(availableBalanceAfterSent));
+                TestProgressLogger.LogCheckPoint(LogMessage.RemainingBalanceVerified);
+                walletpage.ClickRefreshTransfers(driver);
+
+                walletpage.VerifyAmountInTransferSection(driver, username, amountOfBtcToSend);
+                TestProgressLogger.LogCheckPoint(LogMessage.VerifiedRequestUnderSentRequest);
+
+                userFunctions.LogOut();
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedOutSuccessfully, Const.USER13));
+                userFunctions.LogIn(TestProgressLogger, Const.USER12);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedInSuccessfully, Const.USER12));
+                UserCommonFunctions.DashBoardMenuButton(driver);
+                UserCommonFunctions.NavigateToWallets(driver);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.NavigateWalletsPage));
+                updatedCurrentBalance = walletpage.GetInstrumentCurrentBalance(driver, currencyName);
+                expectedupdateBalance = GenericUtils.GetDifferenceFromStringAfterAddition(currentBalance, amountOfBtcToSend);
+                Assert.Equal(expectedupdateBalance, GenericUtils.RemoveCommaFromString(updatedCurrentBalance));
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.BalanceUpdatedSuccessfully, Const.USER12));
+
+                walletpage.ClickInstrumentDetails(driver, currencyName);
+                walletpage.GetHoldAvailablePendingDepositTotalBalanceOnDetailsPage(driver);
+
+                totalBalanceAfterSent = walletpage.TotalBalanceDetailsPage;
+                expectedTotalBalanceAfterSent = GenericUtils.GetDifferenceFromStringAfterAddition(availableBalanceOfFirstUser, amountOfBtcToSend);
+                Assert.Equal(expectedTotalBalanceAfterSent, GenericUtils.RemoveCommaFromString(totalBalanceAfterSent));
+                TestProgressLogger.LogCheckPoint(LogMessage.TotalBalanceVerified);
+
+                availableBalanceAfterSent = walletpage.AvailableBalanceDetailsPage;
+                expectedAvailableBalanceAfterSent = GenericUtils.GetDifferenceFromStringAfterAddition(totalBalanceOfFirstUser, amountOfBtcToSend);
+                Assert.Equal(expectedAvailableBalanceAfterSent, GenericUtils.RemoveCommaFromString(availableBalanceAfterSent));
+                TestProgressLogger.LogCheckPoint(LogMessage.RemainingBalanceVerified);
+
+                walletpage.ClickReceivedTransferOnDetailsPage(driver);
+                walletpage.ClickRefreshTransfers(driver);
+                walletpage.VerifyAmountInTransferSection(driver, secondUsername, amountOfBtcToSend);
+                TestProgressLogger.LogCheckPoint(LogMessage.VerifyTransactionUnderReceivedTransfer);
+
+                userFunctions.LogOut();
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedOutSuccessfully, Const.USER12));
+                TestProgressLogger.EndTest();
+            }
+            catch (Exception e)
+            {
+                TestProgressLogger.TakeScreenshot();
+                TestProgressLogger.Error(LogMessage.WalletsSendToEmailAddressTestFailed, e);
+                throw e;
+            }
+        }
+        
+        [Fact]
+        public void TC39_WalletsReceiveRequestbyEmail()
+        {
+            try
+            {
+                string username;
+                string currentBalanceOfUser7;
+                string currentBalanceOfUser8;
+                string availablebalance;
+                string totalbalance;
+                string withdrawSuccessMsg;
+                string updatedCurrentBalance;
+                string expectedupdateBalance;
+                string currentBalance;
+                string expupdateBalance;
+                string availablebalanceAfterApprove;
+
+
+                instrument = TestData.GetData("Instrument");
+                currencyName = TestData.GetData("CurrencyName");
+                comment = TestData.GetData("Comment");
+                amountOfBtcToSend = TestData.GetData("AmountOfBtcToSend");
+                withdrawStatus = TestData.GetData("WithdrawStatus");
+                user12_EmailAddress = TestData.GetData("User_12EmailAddress");
+                user13_EmailAddress = TestData.GetData("User_13EmailAddress");
+
+                TestProgressLogger.StartTest();
+               
+                UserFunctions userFunctions = new UserFunctions(TestProgressLogger);
+                username = userFunctions.LogIn(TestProgressLogger, Const.USER12);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedInSuccessfully, Const.USER12));
+                UserCommonFunctions.DashBoardMenuButton(driver);
+                UserCommonFunctions.NavigateToWallets(driver);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.NavigateWalletsPage));
+
+                WalletPage walletpage = new WalletPage();
+                currentBalanceOfUser7 = walletpage.GetInstrumentCurrentBalance(driver, currencyName);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.StoreCurrentBalance, Const.USER12));
+                userFunctions.LogOut();
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedOutSuccessfully, Const.USER12));
+
+                userFunctions.LogIn(TestProgressLogger, Const.USER13);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedInSuccessfully, Const.USER13));
+
+                UserCommonFunctions.DashBoardMenuButton(driver);
+                UserCommonFunctions.NavigateToWallets(driver);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.NavigateWalletsPage));
+
+                currentBalanceOfUser8 = walletpage.GetInstrumentCurrentBalance(driver, currencyName);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.StoreCurrentBalance, Const.USER13));
+                walletpage.ClickInstrumentDetails(driver, currencyName);
+                walletpage.GetHoldAvailablePendingDepositTotalBalanceOnDetailsPage(driver);
+                availablebalance = walletpage.AvailableBalanceDetailsPage;
+                totalbalance = walletpage.AvailableBalanceDetailsPage;
+                walletpage.ClickReceiveButtonOnDetailsPage(driver);
+                walletpage.ClickOnReceiveRequestByEmail(driver);
+                walletpage.SendBitCoinRequestByEmail(driver, comment, user12_EmailAddress, amountOfBtcToSend);
+                walletpage.ClickOnSendBitCoin(driver);
+                walletpage.VerifyConfirmationModal(driver, user12_EmailAddress, amountOfBtcToSend);
+                TestProgressLogger.LogCheckPoint(LogMessage.VerifiedDetailsOnConfirmModal);
+                walletpage.ClickConfirmButton(driver);
+                TestProgressLogger.LogCheckPoint(LogMessage.ConfirmationModalVerified);
+                withdrawSuccessMsg = UserCommonFunctions.GetTextOfMessage(driver, TestProgressLogger);
+                Assert.Equal(Const.RequestTransferSuccessMsg, withdrawSuccessMsg);
+                walletpage.CloseSendOrReciveSection(driver);
+                walletpage.GetHoldAvailablePendingDepositTotalBalanceOnDetailsPage(driver);
+                Assert.Equal(availablebalance, walletpage.AvailableBalanceDetailsPage);
+                TestProgressLogger.LogCheckPoint(LogMessage.VerifiedAvailableBalance);
+                Assert.Equal(totalbalance, walletpage.AvailableBalanceDetailsPage);
+                TestProgressLogger.LogCheckPoint(LogMessage.VerifiedTotalBalance);
+                walletpage.ClickRefreshTransfers(driver);
+                walletpage.SelectSentRequests(driver);
+                walletpage.VerifyAmountInTransferSentRequestsSection(driver, username, amountOfBtcToSend);
+                TestProgressLogger.LogCheckPoint(LogMessage.VerifiedRequestUnderSentRequest);
+                userFunctions.LogOut();
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedOutSuccessfully, Const.USER13));
+                userFunctions.LogIn(TestProgressLogger, Const.USER12);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedInSuccessfully, Const.USER12));
+
+                walletpage.ClickApproveButton(driver);
+                withdrawSuccessMsg = UserCommonFunctions.GetTextOfMessage(driver, TestProgressLogger);
+                Assert.Equal(LogMessage.TransferApproved, withdrawSuccessMsg);
+                Assert.False(walletpage.VerifyApproveButton(driver));
+                Assert.False(walletpage.VerifyRejectButton(driver));
+                TestProgressLogger.LogCheckPoint(LogMessage.VerifiedApproveAndRejectButton);
+                UserCommonFunctions.DashBoardMenuButton(driver);
+                UserCommonFunctions.NavigateToWallets(driver);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.NavigateWalletsPage));
+                updatedCurrentBalance = walletpage.GetInstrumentCurrentBalance(driver, currencyName);
+                expectedupdateBalance = GenericUtils.GetDifferenceFromStringAfterSubstraction(currentBalanceOfUser7, amountOfBtcToSend);
+                Assert.Equal(expectedupdateBalance, GenericUtils.RemoveCommaFromString(updatedCurrentBalance));
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.BalanceReducedSuccessfully, Const.USER12));
+                userFunctions.LogOut();
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedOutSuccessfully, Const.USER12));
+
+                userFunctions.LogIn(TestProgressLogger, Const.USER13);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedInSuccessfully, Const.USER13));
+                UserCommonFunctions.DashBoardMenuButton(driver);
+                UserCommonFunctions.NavigateToWallets(driver);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.NavigateWalletsPage));
+
+                currentBalance = walletpage.GetInstrumentCurrentBalance(driver, currencyName);
+                expupdateBalance = GenericUtils.GetDifferenceFromStringAfterAddition(currentBalanceOfUser8, amountOfBtcToSend);
+                Assert.Equal(expupdateBalance, GenericUtils.RemoveCommaFromString(currentBalance));
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.BalanceIncreasedSuccessfully, Const.USER13));
+
+                walletpage.ClickInstrumentDetails(driver, currencyName);
+                walletpage.GetHoldAvailablePendingDepositTotalBalanceOnDetailsPage(driver);
+                availablebalanceAfterApprove = walletpage.AvailableBalanceDetailsPage;
+                expupdateBalance = GenericUtils.GetDifferenceFromStringAfterAddition(availablebalance, amountOfBtcToSend);
+                Assert.Equal(expupdateBalance, GenericUtils.RemoveCommaFromString(availablebalanceAfterApprove));
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.AvailableBalanceIncresedAfterApporve, Const.USER13));
+                userFunctions.LogOut();
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.UserLoggedOutSuccessfully, Const.USER13));
+                TestProgressLogger.EndTest();
+            }
+            catch (Exception e)
+            {
+                TestProgressLogger.TakeScreenshot();
+                TestProgressLogger.Error(LogMessage.WalletsReceiveRequestByEmailTestFailed, e);
+                throw e;
+            }
+        }
+
+
+        
+    }
+}

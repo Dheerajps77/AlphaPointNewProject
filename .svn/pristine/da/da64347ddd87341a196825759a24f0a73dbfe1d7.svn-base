@@ -1,0 +1,2484 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Extent Framework</title>
+  <link rel="apple-touch-icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+  <link rel="shortcut icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+  <link href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/a42e32f/spark/css/style.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style> </style>
+</head>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+
+
+
+<body class="test-view  standard">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+            <div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary">Extent Framework</span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">2/14/2019 11:45:12 AM</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+            <div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="side-nav-controls">
+    <ul>
+      <li>
+        <a href="#" class="lightsout" style="color:#8a8a8a;">
+          <i class="fa fa-desktop"></i>"</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+            <div class="page-container">
+                <div class="main-content">
+                    <div class="test-wrapper row">
+                        <div class="test-list">
+                            <div class="test-list-tools">
+                                <ul class="tools pull-left">
+                                    <li>
+                                        <a href="">
+                                            <span class="font-size-14">Tests</span>
+                                        </a>
+                                    </li> 
+                                </ul>
+                                <ul class="tools text-right">
+									<li class="user-profile dropdown dropdown-animated scale-left">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-exclamation-circle"></i>
+										</a>
+										<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>											<a status="fail" class="dropdown-item" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>																																																							<div class="dropdown-divider"></div>
+											<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+										</ul>
+									</li>
+																		                                </ul>
+                            </div>
+                            <div class="test-list-wrapper scrollable">
+                                <ul class="test-list-item">
+										<li class="test-item" status="fail" author="" device="" tag=""> 
+											<div class="status-avatar fail-bg">
+												<i class="fa fa-times text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">AdvancedOrderTest</p> 
+													<p class="duration text-sm">0h:17m:0s+000ms</p> 
+													<span class="datetime">18:57:00 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-fail">AdvancedOrderTest</h5>
+															<span class='badge badge-success'>2/13/2019 6:57:00 PM</span>
+															<span class='badge badge-danger'>2/13/2019 7:14:00 PM</span>
+															<span class='badge badge-default'>0h:17m:0s+000ms</span>
+														</div>
+																											</div>
+												</div>
+												<div class="mt-4">
+		                                			
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC28_VerifyIOCAdvanceSellOrder</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:58:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:58:00</td>
+				<td>
+Setting up Buy market [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:58:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:59:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:59:00</td>
+				<td>
+Market Buy Order placed successfully [Buy Amount 10]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:59:00</td>
+				<td>
+Limit Buy order placed successfully [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:59:00</td>
+				<td>
+User User_2 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:59:00</td>
+				<td>
+Buy Market setup completed [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:59:00</td>
+				<td>
+User magic2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:59:00</td>
+				<td>
+Cancelled all the open orders									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:59:00</td>
+				<td>
+IOC Advance Sell Order placed successfully [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:59:00</td>
+				<td>
+Last Price532.00000000									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>18:59:00</td>
+				<td>
+Sell Order successfully verified in Filled Orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>18:59:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC29_VerifyIOCAdvanceSellOrderMoreThanBidPrice</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:00:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:00:00</td>
+				<td>
+Setting up Buy market [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:00:00</td>
+				<td>
+IOC Advance Sell Order Test Failed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>19:00:00</td>
+				<td>
+<textarea disabled class='code-block'>OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='user-summary__popover-menu-trigger page-header-user-summary__popover-menu-trigger']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64)at AlphaPoint_QA.Common.UserFunctions.LogOut() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Common\UserFunctions.cs:line 115
+   at AlphaPoint_QA.Test.AdvancedOrderTest.TC29_VerifyIOCAdvanceSellOrderMoreThanBidPrice() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\AdvancedOrderTest.cs:line 525</textarea>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC10_VerifyMarketOrderTypeAdvanceSellOrder</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:01:00</td>
+				<td>
+User User_1 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:01:00</td>
+				<td>
+Setting up Buy market [Order Size 7, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:01:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:02:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:02:00</td>
+				<td>
+Market Buy Order placed successfully [Buy Amount 7]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:02:00</td>
+				<td>
+Limit Buy order placed successfully [Order Size 7, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:02:00</td>
+				<td>
+User User_1 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:02:00</td>
+				<td>
+Buy Market setup completed [Order Size 7, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:02:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:02:00</td>
+				<td>
+Cancelled all the open orders									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:02:00</td>
+				<td>
+Last Price532.00000000									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:02:00</td>
+				<td>
+Sell Order not found in Filled Orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:02:00</td>
+				<td>
+Market Advance Sell Order Failed [Order Size 7]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>19:02:00</td>
+				<td>
+<textarea disabled class='code-block'>Assert.True() Failure
+Expected: True
+Actual:   Falseat AlphaPoint_QA.Test.AdvancedOrderTest.TC10_VerifyMarketOrderTypeAdvanceSellOrder() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\AdvancedOrderTest.cs:line 171</textarea>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC32_VerifyPlaceSellOrderWithReserveOrderType</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:02:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:03:00</td>
+				<td>
+Cancelled all the open orders									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:03:00</td>
+				<td>
+Reserve Advance Sell Order placed successfully [Order Size 10, LimitPrice 50, DisplayQuantity1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:03:00</td>
+				<td>
+Sell Order Successfully verifed in Open orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:03:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC31_VerifyPlaceBuyOrderWithReservOrderType</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:03:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:03:00</td>
+				<td>
+Cancelled all the open orders									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:03:00</td>
+				<td>
+Reserve Advance Buy Order placed successfully [Order Size 10, LimitPrice 50, DisplayQuantity1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:03:00</td>
+				<td>
+Buy Order Successfully verifed in Open orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:03:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC13_VerifyStopMarketBuyOrder</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:04:00</td>
+				<td>
+User User_3 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:04:00</td>
+				<td>
+Setting up Sell market [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:04:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:04:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:04:00</td>
+				<td>
+Market Sell Order placed successfully [Buy Amount 10]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:04:00</td>
+				<td>
+Limit Sell order placed successfully [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:04:00</td>
+				<td>
+User User_3 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:04:00</td>
+				<td>
+Sell Market setup completed [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:04:00</td>
+				<td>
+User User_4 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:04:00</td>
+				<td>
+Cancelled all the open orders									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:05:00</td>
+				<td>
+Buy Order Successfully verifed in Open orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:05:00</td>
+				<td>
+User User_5 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:05:00</td>
+				<td>
+no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='ap-logo__link standalone-layout__logo__link']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64)   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at AlphaPoint_QA.Common.UserCommonFunctions.SelectLinkOnKYCPage(IWebDriver driver) in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Common\UserCommonFunctions.cs:line 540
+   at AlphaPoint_QA.Common.UserCommonFunctions.PlaceOrdersToSetLastPrice(IWebDriver driver, String instrument, String buyTab, String sellTab, String orderSize, String limitPrice, String timeInForce, String userBuyer, String userSeller) in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Common\UserCommonFunctions.cs:line 514
+   at AlphaPoint_QA.Test.AdvancedOrderTest.TC13_VerifyStopMarketBuyOrder() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\AdvancedOrderTest.cs:line 778									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:05:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC17_VerifyTrailingStopMarketBuyOrder</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:06:00</td>
+				<td>
+User User_5 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:06:00</td>
+				<td>
+no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='ap-logo__link standalone-layout__logo__link']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64)   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at AlphaPoint_QA.Common.UserCommonFunctions.SelectLinkOnKYCPage(IWebDriver driver) in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Common\UserCommonFunctions.cs:line 540
+   at AlphaPoint_QA.Common.UserCommonFunctions.PlaceOrdersToSetLastPrice(IWebDriver driver, String instrument, String buyTab, String sellTab, String orderSize, String limitPrice, String timeInForce, String userBuyer, String userSeller) in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Common\UserCommonFunctions.cs:line 514
+   at AlphaPoint_QA.Test.AdvancedOrderTest.TC17_VerifyTrailingStopMarketBuyOrder() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\AdvancedOrderTest.cs:line 950									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:06:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC18_VerifyTrailingStopMarketSellOrder</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:06:00</td>
+				<td>
+User User_5 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:07:00</td>
+				<td>
+no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='ap-logo__link standalone-layout__logo__link']"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64)   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at AlphaPoint_QA.Common.UserCommonFunctions.SelectLinkOnKYCPage(IWebDriver driver) in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Common\UserCommonFunctions.cs:line 540
+   at AlphaPoint_QA.Common.UserCommonFunctions.PlaceOrdersToSetLastPrice(IWebDriver driver, String instrument, String buyTab, String sellTab, String orderSize, String limitPrice, String timeInForce, String userBuyer, String userSeller) in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Common\UserCommonFunctions.cs:line 514
+   at AlphaPoint_QA.Test.AdvancedOrderTest.TC18_VerifyTrailingStopMarketSellOrder() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\AdvancedOrderTest.cs:line 1027									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:07:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC26_VerifyIOCAdvanceBuyOrderLimitAskPrice</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:07:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:07:00</td>
+				<td>
+Setting up Sell market [Order Size 10, Limit Price 533]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:07:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:07:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:07:00</td>
+				<td>
+Market Sell Order placed successfully [Buy Amount 10]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:07:00</td>
+				<td>
+Limit Sell order placed successfully [Order Size 10, Limit Price 533]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:07:00</td>
+				<td>
+User User_2 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:07:00</td>
+				<td>
+Sell Market setup completed [Order Size 10, Limit Price 533]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:07:00</td>
+				<td>
+User magic2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:08:00</td>
+				<td>
+Cancelled all the open orders									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:08:00</td>
+				<td>
+IOC Advance Buy Order Test Failed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>19:08:00</td>
+				<td>
+<textarea disabled class='code-block'>Assert.Equal() Failure
+               ↓ (pos 5)
+Expected: Your Order has been Canceled
+Actual:   Your order has been successfully added
+               ↑ (pos 5)at AlphaPoint_QA.Test.AdvancedOrderTest.TC26_VerifyIOCAdvanceBuyOrderLimitAskPrice() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\AdvancedOrderTest.cs:line 306</textarea>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC30_VerifyPartiallyIOCAdvanceSellOrderMoreThanBidPrice</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:08:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:08:00</td>
+				<td>
+Setting up Buy market [Order Size 7, Limit Price 533]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:08:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:08:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:08:00</td>
+				<td>
+Market Buy Order placed successfully [Buy Amount 7]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:08:00</td>
+				<td>
+Limit Buy order placed successfully [Order Size 7, Limit Price 533]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:08:00</td>
+				<td>
+User User_2 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:08:00</td>
+				<td>
+Buy Market setup completed [Order Size 7, Limit Price 533]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:09:00</td>
+				<td>
+User User_1 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:09:00</td>
+				<td>
+Cancelled all the open orders									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:09:00</td>
+				<td>
+IOC Advance Sell Order placed successfully [Order Size 9, Limit Price 533]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:09:00</td>
+				<td>
+Last Price533.00000000									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:09:00</td>
+				<td>
+Sell Order successfully verified in Filled Orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:09:00</td>
+				<td>
+Sell Order successfully verified in Inactive Orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:09:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC25_VerifyIOCAdvanceBuyOrder</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:09:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:09:00</td>
+				<td>
+Setting up Sell market [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:09:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+Market Sell Order placed successfully [Buy Amount 10]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+Limit Sell order placed successfully [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+User User_2 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+Sell Market setup completed [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+User magic2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+Cancelled all the open orders									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+IOC Advance Buy Order placed successfully [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+Last Price532.00000000									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+Buy Order successfully verified in Filled Orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+Order Successfully verified in Filled orders tab [Instrument BTCUSD, Side Buy, Order Size 10, Date/Time System.Collections.Generic.Dictionary`2[System.String,System.String]]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:10:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC14_VerifyStopMarketSellOrder</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+User User_3 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:10:00</td>
+				<td>
+Setting up Buy market [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:11:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:11:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:11:00</td>
+				<td>
+Market Buy Order placed successfully [Buy Amount 10]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:11:00</td>
+				<td>
+Limit Buy order placed successfully [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:11:00</td>
+				<td>
+User User_3 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:11:00</td>
+				<td>
+Buy Market setup completed [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:11:00</td>
+				<td>
+User User_4 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:11:00</td>
+				<td>
+Stop Market Advance Sell Order Failed [Order Size 10]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>19:11:00</td>
+				<td>
+<textarea disabled class='code-block'>OpenQA.Selenium.StaleElementReferenceException : stale element reference: element is not attached to the page document
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64)at AlphaPoint_QA.Test.AdvancedOrderTest.TC14_VerifyStopMarketSellOrder() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\AdvancedOrderTest.cs:line 910</textarea>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC9_VerifyMarketOrderTypeAdvanceBuyOrder</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:11:00</td>
+				<td>
+User User_1 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:12:00</td>
+				<td>
+Setting up Sell market [Order Size 7, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:12:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:12:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:12:00</td>
+				<td>
+Market Sell Order placed successfully [Buy Amount 7]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:12:00</td>
+				<td>
+Limit Sell order placed successfully [Order Size 7, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:12:00</td>
+				<td>
+User User_1 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:12:00</td>
+				<td>
+Sell Market setup completed [Order Size 7, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:12:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:12:00</td>
+				<td>
+Cancelled all the open orders									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:13:00</td>
+				<td>
+Market Advance Buy Order Failed [Order Size 7]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>19:13:00</td>
+				<td>
+<textarea disabled class='code-block'>OpenQA.Selenium.WebDriverException : unknown error: Element <button class="user-summary__popover-menu-trigger page-header-user-summary__popover-menu-trigger">...</button> is not clickable at point (1253, 34). Other element would receive the click: <div class="slide-pane__header">...</div>
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64)at AlphaPoint_QA.Common.UserFunctions.LogOut() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Common\UserFunctions.cs:line 115
+   at AlphaPoint_QA.Test.AdvancedOrderTest.TC9_VerifyMarketOrderTypeAdvanceBuyOrder() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\AdvancedOrderTest.cs:line 109</textarea>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.AdvancedOrderTest.TC27_VerifyPartiallyIOCAdvanceBuyOrderLimitAskPrice</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:13:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:13:00</td>
+				<td>
+Setting up Sell market [Order Size 7, Limit Price 533]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:13:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:14:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:14:00</td>
+				<td>
+Market Sell Order placed successfully [Buy Amount 7]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:14:00</td>
+				<td>
+Limit Sell order placed successfully [Order Size 7, Limit Price 533]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:14:00</td>
+				<td>
+User User_2 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:14:00</td>
+				<td>
+Sell Market setup completed [Order Size 7, Limit Price 533]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:14:00</td>
+				<td>
+User User_1 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:14:00</td>
+				<td>
+Cancelled all the open orders									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:14:00</td>
+				<td>
+IOC Advance Buy Order placed successfully [Order Size 9, Limit Price 533]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:14:00</td>
+				<td>
+Last Price533.00000000									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:14:00</td>
+				<td>
+Buy Order successfully verified in Filled Orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:14:00</td>
+				<td>
+Buy Order successfully verified in Inactive Orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:14:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+
+												</div>
+											</div>
+										</li>
+										<li class="test-item" status="fail" author="" device="" tag=""> 
+											<div class="status-avatar fail-bg">
+												<i class="fa fa-times text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">LoyaltyTokenTest</p> 
+													<p class="duration text-sm">0h:2m:0s+000ms</p> 
+													<span class="datetime">19:14:00 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-fail">LoyaltyTokenTest</h5>
+															<span class='badge badge-success'>2/13/2019 7:14:00 PM</span>
+															<span class='badge badge-danger'>2/13/2019 7:16:00 PM</span>
+															<span class='badge badge-default'>0h:2m:0s+000ms</span>
+														</div>
+																											</div>
+												</div>
+												<div class="mt-4">
+		                                			
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.LoyaltyTokenTest.TC50_VerifyLoyalityFeeSellMarketOrder</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:14:00</td>
+				<td>
+Admin user Admin logged in successfully.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:15:00</td>
+				<td>
+Admin user logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:15:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:15:00</td>
+				<td>
+Loyalty Token - Sell Market Order verification failed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>19:15:00</td>
+				<td>
+<textarea disabled class='code-block'>OpenQA.Selenium.StaleElementReferenceException : stale element reference: element is not attached to the page document
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64)at AlphaPoint_QA.Test.LoyaltyTokenTest.TC50_VerifyLoyalityFeeSellMarketOrder() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\LoyaltyTokenTest.cs:line 151</textarea>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.LoyaltyTokenTest.TC49_VerifyLoyalityFeeBuyMarketOrder</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:15:00</td>
+				<td>
+Admin user Admin logged in successfully.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:16:00</td>
+				<td>
+Admin user logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:16:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:16:00</td>
+				<td>
+Loyalty Token - Buy Market Order verification passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:16:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+
+												</div>
+											</div>
+										</li>
+										<li class="test-item" status="fail" author="" device="" tag=""> 
+											<div class="status-avatar fail-bg">
+												<i class="fa fa-times text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">OrderEntryTest</p> 
+													<p class="duration text-sm">0h:5m:0s+000ms</p> 
+													<span class="datetime">19:16:00 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-fail">OrderEntryTest</h5>
+															<span class='badge badge-success'>2/13/2019 7:16:00 PM</span>
+															<span class='badge badge-danger'>2/13/2019 7:21:00 PM</span>
+															<span class='badge badge-default'>0h:5m:0s+000ms</span>
+														</div>
+																											</div>
+												</div>
+												<div class="mt-4">
+		                                			
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.OrderEntryTest.TC4_VerifySellMarketOrder</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:16:00</td>
+				<td>
+User User_3 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:16:00</td>
+				<td>
+Setting up Buy market [Order Size 0.8, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:16:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:17:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:17:00</td>
+				<td>
+Market Buy Order placed successfully [Buy Amount 0.8]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:17:00</td>
+				<td>
+Limit Buy order placed successfully [Order Size 0.8, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:17:00</td>
+				<td>
+User User_3 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:17:00</td>
+				<td>
+Buy Market setup completed [Order Size 0.8, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:17:00</td>
+				<td>
+User User_4 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:17:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:17:00</td>
+				<td>
+For Sell Stop Order case ---> Balances stored successfully.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:17:00</td>
+				<td>
+Market Sell Order placed successfully [Buy Amount 0.8]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:17:00</td>
+				<td>
+Last Price532.00000000									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:17:00</td>
+				<td>
+Sell Order successfully verified in Filled Orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:17:00</td>
+				<td>
+Verified sell market Order test passed successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:17:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.OrderEntryTest.TC2_VerifyAmountPersistence</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:18:00</td>
+				<td>
+User User_1 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:18:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:18:00</td>
+				<td>
+Test case has been failed for Buy Market Order Type									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:18:00</td>
+				<td>
+Test case has been failed for Sell Market Order Type									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>19:18:00</td>
+				<td>
+<textarea disabled class='code-block'>Assert.True() Failure
+Expected: True
+Actual:   Falseat AlphaPoint_QA.Test.OrderEntryTest.TC2_VerifyAmountPersistence() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\OrderEntryTest.cs:line 65</textarea>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.OrderEntryTest.TC8_VerifySellStopOrder</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:18:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:18:00</td>
+				<td>
+Setting up Sell market [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:18:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:18:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:18:00</td>
+				<td>
+Market Sell Order placed successfully [Buy Amount 10]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:18:00</td>
+				<td>
+Limit Sell order placed successfully [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:19:00</td>
+				<td>
+User User_2 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:19:00</td>
+				<td>
+Sell Market setup completed [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:19:00</td>
+				<td>
+User User_1 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:19:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:19:00</td>
+				<td>
+For Sell Stop Order case ---> Balances stored successfully.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:19:00</td>
+				<td>
+Market Sell Order placed successfully [Buy Amount 10]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:19:00</td>
+				<td>
+Sell Order Successfully verifed in Open orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:19:00</td>
+				<td>
+Verified Sell stop Order test passed successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:19:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.OrderEntryTest.TC7_VerifyBuyStopOrder</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:19:00</td>
+				<td>
+User User_3 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:19:00</td>
+				<td>
+Setting up Sell market [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:19:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:20:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:20:00</td>
+				<td>
+Market Sell Order placed successfully [Buy Amount 10]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:20:00</td>
+				<td>
+Limit Sell order placed successfully [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:20:00</td>
+				<td>
+User User_3 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:20:00</td>
+				<td>
+Sell Market setup completed [Order Size 10, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:20:00</td>
+				<td>
+User User_4 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:20:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:20:00</td>
+				<td>
+For Buy Stop Order case ---> Balances stored successfully.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>19:20:00</td>
+				<td>
+<textarea disabled class='code-block'>Assert.Equal() Failure
+          ↓ (pos 0)
+Expected: Your order has been successfully added
+Actual:   Invalid_Stop_Price
+          ↑ (pos 0)at AlphaPoint_QA.Test.OrderEntryTest.TC7_VerifyBuyStopOrder() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\OrderEntryTest.cs:line 314</textarea>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.OrderEntryTest.TC3_VerifyBuyMarketOrder</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:20:00</td>
+				<td>
+User User_1 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:20:00</td>
+				<td>
+Setting up Sell market [Order Size 7, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:21:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:21:00</td>
+				<td>
+									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:21:00</td>
+				<td>
+Market Sell Order placed successfully [Buy Amount 7]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:21:00</td>
+				<td>
+Limit Sell order placed successfully [Order Size 7, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:21:00</td>
+				<td>
+User User_1 logged out successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:21:00</td>
+				<td>
+Sell Market setup completed [Order Size 7, Limit Price 532]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:21:00</td>
+				<td>
+User User_2 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:21:00</td>
+				<td>
+Exchange Menu verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:21:00</td>
+				<td>
+Market Buy Order placed successfully [Buy Amount 0.07]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:21:00</td>
+				<td>
+Last Price532.00000000									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:21:00</td>
+				<td>
+Buy Order not found in Filled Orders tab									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>19:21:00</td>
+				<td>
+<textarea disabled class='code-block'>Market Order successfully verified in Filled Orders tab
+Expected: True
+Actual:   Falseat AlphaPoint_QA.Test.OrderEntryTest.TC3_VerifyBuyMarketOrder() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\OrderEntryTest.cs:line 117</textarea>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+
+												</div>
+											</div>
+										</li>
+										<li class="test-item" status="fail" author="" device="" tag=""> 
+											<div class="status-avatar fail-bg">
+												<i class="fa fa-times text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">ReportBlockTradeTest</p> 
+													<p class="duration text-sm">0h:0m:0s+000ms</p> 
+													<span class="datetime">11:45:12 AM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-fail">ReportBlockTradeTest</h5>
+															<span class='badge badge-success'>2/14/2019 11:45:12 AM</span>
+															<span class='badge badge-danger'>2/14/2019 11:45:12 AM</span>
+															<span class='badge badge-default'>0h:0m:0s+000ms</span>
+														</div>
+																											</div>
+												</div>
+												<div class="mt-4">
+		                                			
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.ReportBlockTradeTest.VerifyBuyBlockTradeWithLockedInTest</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>11:45:12</td>
+				<td>
+<textarea disabled class='code-block'>OpenQA.Selenium.WebDriverException : unknown error: Element <button id="OpenUserMenu" tabindex="0" type="button" style="border: 10px; box-sizing: border-box; display: inline-block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: inherit; font-weight: inherit; position: relative; height: 36px; line-height: 36px; min-width: 88px; color: rgba(0, 0, 0, 0.87); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; border-radius: 2px; user-select: none; overflow: hidden; background-color: rgba(0, 0, 0, 0); text-align: center;">...</button> is not clickable at point (1125, 32). Other element would receive the click: <div class="modal active">...</div>
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64)at AlphaPoint_QA.Common.AdminCommonFunctions.UserMenuBtn() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Common\AdminCommonFunctions.cs:line 818
+   at AlphaPoint_QA.Test.ReportBlockTradeTest.VerifyBuyBlockTradeWithLockedInTest() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\ReportBlockTradeTest.cs:line 148</textarea>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+
+												</div>
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">UserSettingsTest</p> 
+													<p class="duration text-sm">0h:2m:0s+000ms</p> 
+													<span class="datetime">19:22:00 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">UserSettingsTest</h5>
+															<span class='badge badge-success'>2/13/2019 7:22:00 PM</span>
+															<span class='badge badge-danger'>2/13/2019 7:24:00 PM</span>
+															<span class='badge badge-default'>0h:2m:0s+000ms</span>
+														</div>
+																											</div>
+												</div>
+												<div class="mt-4">
+		                                			
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.UserSettingsTest.TC46_VerifyDeleteAPIKey</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:22:00</td>
+				<td>
+User magic1 logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:22:00</td>
+				<td>
+API Key Button is present									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:22:00</td>
+				<td>
+Clicked on API Key Button successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+Checkboxes[Trading, deposits and withdrawls] are present									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+Checkboxes[Trading, deposits and withdrawls] are selected									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+Confirmation Modal verified [Permission: Trading, Withdraw, Deposit]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+API key added is present in the Existing API List									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+Successfully verified the permissions added to the API Key									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+Verification passed: Secret Key is not displayed in the API Keys List									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+API Key Creeated successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+Verification Passed: Delete button is present									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+Verification Passed: Delete button is present									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+Verification Passed: Delete button is present									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+Verification Passed: Delete button is present									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+API Key deleted and verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+API Key deleted and verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:23:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.UserSettingsTest.TC44_VerifyCreateAPIKey</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+User dhirender logged in successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+API Key Button is present									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+Clicked on API Key Button successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+API Key Button is present									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+Checkboxes[Trading, deposits and withdrawls] are present									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:23:00</td>
+				<td>
+Checkboxes[Trading, deposits and withdrawls] are present									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:24:00</td>
+				<td>
+Checkboxes[Trading, deposits and withdrawls] are selected									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:24:00</td>
+				<td>
+Confirmation Modal verified [Permission: Trading, Withdraw, Deposit]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:24:00</td>
+				<td>
+API key added is present in the Existing API List									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:24:00</td>
+				<td>
+Successfully verified the permissions added to the API Key									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:24:00</td>
+				<td>
+Verification passed: Secret Key is not displayed in the API Keys List									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>19:24:00</td>
+				<td>
+API Key created and verified successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>19:24:00</td>
+				<td>
+Pass									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+
+												</div>
+											</div>
+										</li>
+										<li class="test-item" status="fail" author="" device="" tag=""> 
+											<div class="status-avatar fail-bg">
+												<i class="fa fa-times text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">WalletsTest</p> 
+													<p class="duration text-sm">0h:0m:0s+000ms</p> 
+													<span class="datetime">11:45:12 AM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-fail">WalletsTest</h5>
+															<span class='badge badge-success'>2/14/2019 11:45:12 AM</span>
+															<span class='badge badge-danger'>2/14/2019 11:45:12 AM</span>
+															<span class='badge badge-default'>0h:0m:0s+000ms</span>
+														</div>
+																											</div>
+												</div>
+												<div class="mt-4">
+		                                			
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.WalletsTest.TC39_WalletsReceiveRequestbyEmail</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>11:45:12</td>
+				<td>
+<textarea disabled class='code-block'>System.NullReferenceException : Object reference not set to an instance of an object.at AlphaPoint_QA.Test.WalletsTest.TC39_WalletsReceiveRequestbyEmail() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\WalletsTest.cs:line 157</textarea>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">AlphaPoint_QA.Test.WalletsTest.TC40_WalletsWithdrawFiatcurrency</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>11:45:12</td>
+				<td>
+<textarea disabled class='code-block'>Status Id Not Found in Ticket-> Withdraw Page.
+Expected: True
+Actual:   Falseat AlphaPoint_QA.Test.WalletsTest.TC40_WalletsWithdrawFiatcurrency() in D:\WorkFolder\AlphaPoint\Development\Tech_Development\Demo_13Feb\AlphaPoint_QA\Test\WalletsTest.cs:line 256</textarea>									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+
+												</div>
+											</div>
+										</li>
+                                </ul>    
+                            </div>
+                        </div>
+                        <div class="test-content scrollable">
+                            <div class="test-content-tools">
+                                <ul>
+                                    <li>
+                                        <a class="back-to-test" href="javascript:void(0)">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="test-content-detail">
+                                <div class="detail-body"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script type='text/javascript'>
+	
+</script>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/a42e32f/spark/js/script.js"></script>
+
+</body>
+
+</html>

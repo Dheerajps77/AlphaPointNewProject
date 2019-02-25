@@ -1,0 +1,146 @@
+﻿using AlphaPoint_QA.Common;
+using AlphaPoint_QA.Pages;
+using AlphaPoint_QA.Utils;
+using log4net;
+using OpenQA.Selenium;
+using System;
+using Xunit;
+using Xunit.Abstractions;
+
+namespace AlphaPoint_QA.Test
+{
+    [Collection("Alphapoint_QA_USER")]
+    public class BuyAndSellTest : TestBase
+    {
+        private string instrument;
+        private string orderType;
+        private string menuTab;
+        private string buyTab;
+        private string sellTab;
+        private string orderSize;
+        private string limitPrice;
+        private string timeInForce;
+        private string sellOrderSize;
+
+        private readonly ITestOutputHelper output;
+        static ILog logger;
+
+        public BuyAndSellTest(ITestOutputHelper output) : base(output)
+        {
+
+            
+        }
+
+        [Fact]
+        public void TC42_VerifyBuyAndSell_BuyTest()
+        {
+            instrument = TestData.GetData("Instrument");
+            sellTab = TestData.GetData("SellTab");
+            buyTab = TestData.GetData("BuyTab");
+            sellOrderSize = TestData.GetData("TC11_SellOrderSize");
+            limitPrice = TestData.GetData("TC11_LimitPrice");
+            timeInForce = TestData.GetData("TC11_TimeInForce");
+
+            UserFunctions userfuntionality = new UserFunctions(TestProgressLogger);
+            BuyAndSellPage objBuyAndSellPage = new BuyAndSellPage(TestProgressLogger);
+            UserFunctions userFunctions = new UserFunctions(TestProgressLogger);
+            UserCommonFunctions userCommonFunction = new UserCommonFunctions(TestProgressLogger);
+            try
+            {
+
+                string askPrice;
+                TestProgressLogger.StartTest();
+                userFunctions.LogIn(TestProgressLogger, Const.USER6);
+                askPrice = userCommonFunction.CancelAndPlaceLimitSellOrder(driver, instrument, sellTab, sellOrderSize, limitPrice, timeInForce);
+                UserCommonFunctions.ConfirmWindowOrder(askPrice, limitPrice, driver);
+                userFunctions.LogOut();
+
+                userfuntionality.LogIn(TestProgressLogger, Const.USER5);               
+                UserCommonFunctions.DashBoardMenuButton(driver);
+                UserCommonFunctions.NavigateToBuySell(driver);
+                Assert.True(objBuyAndSellPage.VerifyMakeATransaction());
+                Assert.True(objBuyAndSellPage.VerifyChart());
+                Assert.True(objBuyAndSellPage.VerifyBuyOption());
+                Assert.True(objBuyAndSellPage.VerifyFifthRadioButtonOption());
+                Assert.True(objBuyAndSellPage.VerifyFifthWithBlankValues());
+                objBuyAndSellPage.PlaceBuyOrder(instrument, buyTab);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.BuyAndSellBuyTestVerificationPassed, buyTab));
+            }
+            catch (NoSuchElementException ex)
+            {
+                TestProgressLogger.TakeScreenshot();
+                TestProgressLogger.LogCheckPoint(ex.Message + ex.StackTrace);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                TestProgressLogger.TakeScreenshot();
+                TestProgressLogger.Error(String.Format(LogMessage.BuyAndSellBuyTestVerificationFailed, buyTab), ex);
+                TestProgressLogger.LogCheckPoint(ex.Message + ex.StackTrace);
+
+            }
+            finally
+            {
+                TestProgressLogger.EndTest();
+                UserFunctions userFunctionality = new UserFunctions(TestProgressLogger);
+                userFunctionality.LogOut();
+            }
+        }
+
+
+        [Fact]
+        public void TC43_VerifyBuyAndSell_SellTest()
+        {
+            instrument = TestData.GetData("Instrument");
+            sellTab = TestData.GetData("SellTab");
+            buyTab = TestData.GetData("BuyTab");
+            sellOrderSize = TestData.GetData("TC11_SellOrderSize");
+            limitPrice = TestData.GetData("TC11_LimitPrice");
+            timeInForce = TestData.GetData("TC11_TimeInForce");
+
+            UserFunctions userfuntionality = new UserFunctions(TestProgressLogger);
+            BuyAndSellPage objBuyAndSellPage = new BuyAndSellPage(TestProgressLogger);
+            UserFunctions userFunctions = new UserFunctions(TestProgressLogger);
+            UserCommonFunctions userCommonFunction = new UserCommonFunctions(TestProgressLogger);
+            try
+            {
+                string askPrice;
+                TestProgressLogger.StartTest();
+                userFunctions.LogIn(TestProgressLogger, Const.USER6);
+                askPrice = userCommonFunction.CancelAndPlaceLimitBuyOrder(driver, instrument, sellTab, sellOrderSize, limitPrice, timeInForce);
+                UserCommonFunctions.ConfirmWindowOrder(askPrice, limitPrice, driver);
+                userFunctions.LogOut();               
+                userfuntionality.LogIn(TestProgressLogger, Const.USER5);
+                UserCommonFunctions.DashBoardMenuButton(driver);
+                UserCommonFunctions.NavigateToBuySell(driver);
+                objBuyAndSellPage.SellBtn();
+                Assert.True(objBuyAndSellPage.VerifyMakeATransaction());
+                Assert.True(objBuyAndSellPage.VerifyChart());
+                Assert.True(objBuyAndSellPage.VerifySellOption());
+                Assert.True(objBuyAndSellPage.VerifyFifthRadioButtonOption());
+                Assert.True(objBuyAndSellPage.VerifyFifthWithBlankValues());
+                objBuyAndSellPage.PlaceSellOrder(instrument, sellTab);
+                TestProgressLogger.LogCheckPoint(String.Format(LogMessage.BuyAndSellSellTestVerificationPassed, buyTab));
+            }
+            catch (NoSuchElementException ex)
+            {
+                TestProgressLogger.TakeScreenshot();
+                TestProgressLogger.LogCheckPoint(ex.Message + ex.StackTrace);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                TestProgressLogger.TakeScreenshot();
+                TestProgressLogger.Error(String.Format(LogMessage.BuyAndSellSellTestVerificationFailed, buyTab), ex);
+                TestProgressLogger.LogCheckPoint(ex.Message + ex.StackTrace);
+
+            }
+            finally
+            {
+                TestProgressLogger.EndTest();
+                UserFunctions userFunctionality = new UserFunctions(TestProgressLogger);
+                userFunctionality.LogOut();
+            }
+        }
+    }
+}

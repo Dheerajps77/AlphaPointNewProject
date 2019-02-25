@@ -1,0 +1,5 @@
+TC1_VerifyDetailsOnLandingPageTest
+TC2_VerifyAmountPersistence
+TC3_VerifyBuyMarketOrder
+TC4_VerifySellMarketOrder
+TC5_VerifyBuyLimitOrder

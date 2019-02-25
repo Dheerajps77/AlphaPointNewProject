@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" duration="87.317" testcasecount="2" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" start-time="2019-02-04T 13:52:05Z" end-time="2019-02-04T 13:53:34Z">
+  <test-suite type="Assembly" name="AlphaPoint_QA.dll" fullname="D:\AlphaPoint_FinalDemo\Development\Tech_Development\Demo_V1\AlphaPoint\AlphaPoint_QA\bin\Debug\netcoreapp2.0\AlphaPoint_QA.dll" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" duration="87.317">
+    <test-suite type="TestSuite" name="AlphaPoint_QA" fullname="AlphaPoint_QA" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" duration="87.317">
+      <test-suite type="TestSuite" name="Test" fullname="AlphaPoint_QA.Test" total="2" passed="2" failed="0" inconclusive="0" skipped="0" result="Passed" duration="87.317">
+        <test-suite type="TestFixture" name="AdvancedOrderTest" fullname="AlphaPoint_QA.Test.AdvancedOrderTest" total="1" passed="1" failed="0" inconclusive="0" skipped="0" result="Passed" duration="57.418">
+          <test-case name="AlphaPoint_QA.Test.AdvancedOrderTest.TC25_VerifyIOCAdvanceBuyOrder" fullname="AlphaPoint_QA.Test.AdvancedOrderTest.TC25_VerifyIOCAdvanceBuyOrder" methodname="TC25_VerifyIOCAdvanceBuyOrder" classname="AlphaPoint_QA.Test.AdvancedOrderTest" result="Passed" duration="57.418" asserts="0">
+            <output><![CDATA[{"StartTime":"2019-02-04 19:22 PM","Endtime":"2019-02-04 19:23 PM","EventLog":[{"EventTitle":null,"EventDetails":"User magic1 logged in successfully","TimeStamp":"2019-02-04 19:22 PM"},{"EventTitle":null,"EventDetails":"Setting up Buy market [Order Size 0.5, Limit Price 532]","TimeStamp":"2019-02-04 19:22 PM"},{"EventTitle":null,"EventDetails":"User magic1 logged out successfully","TimeStamp":"2019-02-04 19:22 PM"},{"EventTitle":null,"EventDetails":"Buy Market setup completed [Order Size 0.5, Limit Price 532]","TimeStamp":"2019-02-04 19:22 PM"},{"EventTitle":null,"EventDetails":"User magic2 logged in successfully","TimeStamp":"2019-02-04 19:22 PM"},{"EventTitle":null,"EventDetails":"Cancelled all the open orders","TimeStamp":"2019-02-04 19:22 PM"},{"EventTitle":null,"EventDetails":"IOC Advance Buy Order Placed Successfully [Order Size 0.5, Limit Price 532]","TimeStamp":"2019-02-04 19:22 PM"},{"EventTitle":null,"EventDetails":"Order Successfully verifed in Filled orders tab [Instrument BTCUSD, Side Buy, Order Size 0.5, Date/Time 2-4-2019 7:22pm]","TimeStamp":"2019-02-04 19:23 PM"}]}
+
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" name="UserSettingsTest" fullname="AlphaPoint_QA.Test.UserSettingsTest" total="1" passed="1" failed="0" inconclusive="0" skipped="0" result="Passed" duration="29.898999999999997">
+          <test-case name="AlphaPoint_QA.Test.UserSettingsTest.TC44_VerifyCreateAPIKey" fullname="AlphaPoint_QA.Test.UserSettingsTest.TC44_VerifyCreateAPIKey" methodname="TC44_VerifyCreateAPIKey" classname="AlphaPoint_QA.Test.UserSettingsTest" result="Passed" duration="29.898999999999997" asserts="0">
+            <output><![CDATA[{"StartTime":"2019-02-04 19:23 PM","Endtime":"2019-02-04 19:23 PM","EventLog":[{"EventTitle":null,"EventDetails":"User dhirender logged in successfully","TimeStamp":"2019-02-04 19:23 PM"},{"EventTitle":null,"EventDetails":"API Key Button is present","TimeStamp":"2019-02-04 19:23 PM"},{"EventTitle":null,"EventDetails":"Clicked on API Key Button successfully","TimeStamp":"2019-02-04 19:23 PM"},{"EventTitle":null,"EventDetails":"Checkboxes[Trading, deposits and withdrawls] are present","TimeStamp":"2019-02-04 19:23 PM"},{"EventTitle":null,"EventDetails":"Checkboxes[Trading, deposits and withdrawls] are selected","TimeStamp":"2019-02-04 19:23 PM"},{"EventTitle":null,"EventDetails":"Confirmation Modal verified [Permission: Trading, Withdraw, Deposit]","TimeStamp":"2019-02-04 19:23 PM"},{"EventTitle":null,"EventDetails":"API key added is present in the Existing API List","TimeStamp":"2019-02-04 19:23 PM"},{"EventTitle":null,"EventDetails":"Successfully verified the permissions added to the API Key","TimeStamp":"2019-02-04 19:23 PM"},{"EventTitle":null,"EventDetails":"Verification passed: Secret Key is not displayed in the API Keys List","TimeStamp":"2019-02-04 19:23 PM"}]}
+
+]]></output>
+          </test-case>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+    <errors />
+  </test-suite>
+</test-run>

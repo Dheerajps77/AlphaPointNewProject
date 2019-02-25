@@ -1,0 +1,299 @@
+﻿namespace AlphaPoint_QA.Utils
+{
+    public static class LogMessage
+    {
+        public static string MarketSetupBegin = "Setting up {0} market [Order Size {1}, Limit Price {2}]";
+        public static string MarketSetupEnd = "{0} Market setup completed [Order Size {1}, Limit Price {2}]";
+        public static string CancelOrders = "Cancelled all the open orders";
+        public static string AdvancedOrderPlacedSuccessfully = "IOC Advance {0} Order placed successfully [Order Size {1}, Limit Price {2}]";
+        public static string UserLoggedInSuccessfully = "User {0} logged in successfully";
+        public static string UserLoggedOutSuccessfully = "User {0} logged out successfully";
+        public static string VerifiedEntryInFilledOrdersTab = "Order Successfully verified in Filled orders tab [Instrument {0}, Side {1}, Order Size {2}, Date/Time {3}]";
+        public static string VerifiedConfirmationModal = "Confirmation Modal verified [Permission: {0}]";
+        public static string NavigateWalletsPage = "Navigate On Wallets Page Successfully.";
+        public static string ExternalAddressCopied = "External Address Copied Successfully.";
+        public static string SendBitCoinSuccessfully = "Send BitCoin {0} Successfully.";
+        public static string HoldAmountIncreasedSuccessfully = "Hold Amount Increased Successfully.";
+        public static string AvailableAmountReducedSuccessfully = "Available Amount Reduced by Total Withdraw Amount Successfully.";
+        public static string CreatedTicketStatusVerified = "Created Ticket {0} Status Verified On Admin -> Ticket -> Withdraw Page.";
+        public static string SendExternalWalletsTestPassed = "TC36 Send External Wallets Test Passed Successfully.";
+        public static string AdminUserLogoutSuccessfully = "Admin User {0} Logged Out Successfully.";
+        public const string OpenOrdersVerifiedSuccessfully = "{0} Order Successfully verifed in Open orders tab";
+        public const string OpenOrdersVerifiedFailed = "{0} Order failed in Open orders tab";
+        public const string StopOrderBalanceStoredSuccessfully = "For {0} Stop Order case ---> Balances stored successfully.";
+        public const string StopOrderNotPresent = "For {0} stop Order case ---> {1} or {2} is not present";
+        public const string BuyStopOrderSuccessMsg = "Verified {0} stop Order test passed successfully";
+        public const string LimitOrderSuccessMsg = "Limit {0} order placed successfully [Order Size {1}, Limit Price {2}] ";
+        public const string SellMarketOrderSuccessMsg = "Verified sell market Order test passed successfully";
+        public const string AdvanceIOCOrderSuccessMsg = "IOC Advance {0} Order Test Passed";
+        public const string AdvanceIOCOrderFailureMsg = "IOC Advance {0} Order Test Failed";
+        public const string AdvanceReserveOrderSuccessMsg = "Reserve Advance {0} Order placed successfully [Order Size {1}, LimitPrice {2}, DisplayQuantity{3}]";
+        public const string AdvanceReserveOrderFailureMsg = "Reserve Advance {0} Order Test Failed";
+        public const string AdvanceMarketOrderSuccessMsg = "Market Advance {0} Order placed successfully [Order Size {1}]";
+        public const string AdvanceMarketOrderFailureMsg = "Market Advance {0} Order Failed [Order Size {1}]";
+        public const string AdvanceStopMarketOrderSuccessMsg = "Stop Market Advance {0} Order placed successfully [Order Size {1}]";
+        public const string AdvanceStopMarketOrderFailureMsg = "Stop Market Advance {0} Order Failed [Order Size {1}]";
+        public const string AdvanceTrailingStopStopMarketOrderSuccessMsg = "Trailing Stop Market Advance {0} Order placed successfully [Order Size {1}]";
+        public const string AdvanceTrailingStopStopMarketOrderFailureMsg = "Trailing Stop Market Advance {0} Order Failed [Order Size {1}]";
+        public static string AdvancedStopLimitOrderPlacedSuccessfully = "Stop Limit Advance {0} Order placed successfully [Order Size {1}, Limit Price {2}, Stop Price {3}, TimeInForce {4}]";
+        public static string VerifiedAdvStopLimitFilledOrder = "Stop Limit Advance {0} Order successfully verified in Filled Orders tab [Order Size {1}, Limit Price {2}, Stop Price {3}, TimeInForce {4}]";
+        public static string VerifiedAdvStopLimitInactiveOrder = "Stop Limit Advance {0} Order successfully verified in Filled Orders tab [Type {1}, Order Size {2}, Price {3}]";
+
+        // Wallets 
+        public static string RemainingBalanceVerified = "Remaining Balance Verified in Details Section.";
+        public static string TotalBalanceVerified = "Remaining Balance Verified in Details Section.";
+        public static string HoldBalanceVerified = "Hold Balance Verified in Details Section.";
+        public static string ConfirmationModalVerified = "EmailId and Btc Amount Verified in Confirmation Modal.";
+        public static string BalanceUpdatedSuccessfully = "Balance Updated Successfully On User {0}";
+        public static string VerifiedAvailableBalance = "Verified Available Balance After Send Request.";
+        public static string VerifiedDetailsOnConfirmModal = "Verified Details on Confirm Modal.";
+        public static string VerifiedTotalBalance = "Verified Total Balance After Send Request.";
+        public static string RecievedAddressCopied = "Recieved Address Copied Successfully.";
+        public static string VerifiedRequestUnderSentRequest = "Verified Request Under Sent Request.";
+        public static string VerifiedApproveAndRejectButton = "Verified Approve And Reject Button is Not Displayed After Approve Request.";
+        public static string BalanceReducedSuccessfully = "Balance Reduced Successfully On User {0}";
+        public static string BalanceIncreasedSuccessfully = "Balance Reduced Successfully On User {0}";
+        public static string StoreCurrentBalance = "Store Current Balance Of User {0}";
+        public static string RemainingBalanceVerifiedOnBalanceSection = "Remaining Balance Verified On Balance Section";
+        public static string USDWithdrawSuccessMsg = "Your withdraw has been successfully added";
+        public static string USDDepositSuccessMsg = "Your deposit has been successfully added";
+        public static string WalletsWithdrawFiatcurrencyTestPassed = "Wallets Withdraw Fiat Currency Test Passed.";
+        public static string WalletsDepositFiatcurrencyTestPassed = "Wallets Deposit Fiat Currency Test Passed.";
+        public static string TransferApproved = "Transfer Approved";
+        public static string AvailableBalanceIncresedAfterApporve = "Verified Available Balance For User {0} is Increased By Requested Amount.";
+        public static string VerifyTicketStatusAsNew = "Verified Created Wallet Deposit Status As New.";
+        public static string VerifyTicketStatusAsAccepted = "Verified Created Wallet Deposit Status After Accept Request.";
+        public static string VerifyTicketStatus = "Verified Ticket Status.";
+        public static string VerifyTransactionUnderReceivedTransfer = "Verified Transaction Under Received Transfer.";
+        public static string WithdrawSuccessfullyConfirmMsg = "Your withdrawal has been confirmed successfully and has started processing.";
+        public static string WithdrawConfirmedMassage = "Withdraw Confirmation Massage Verified in Mail Account.";
+
+
+        public static string SendExternalWalletsTestFailed = "Send External Wallets Test Failed.";
+        public static string WalletsSendToEmailAddressTestFailed = "Wallets Send To Email Address Test Failed.";
+        public static string WalletsReceiveRequestByEmailTestFailed = "Wallets Receive Request By Email Test Failed.";
+        public static string WalletsWithdrawFiatcurrencyTestFailed = "Wallets Withdraw Fiat Currency Test Failed.";
+
+
+        public static string WalletsDepositFiatcurrencyTestFailed = "Wallets Deposit Fiat Currency Test Failed.";
+        public static string ExchangeMenuVerifiedSuccessfully = "Exchange Menu verified successfully";
+        public static string ExchangeMenuVerificationFailed = "Exchange Menu verification failed";
+        public static string AmountPersistenceSuccessMsg = "Market amount persistence test passed successfully for sides [{0} and {1}]";
+        public static string AmountPersistenceCheckSuccessMsg = "Test case has been passed for {0} Market Order Type";
+        public static string AmountPersistenceCheckFailureMsg = "Test case has been failed for {0} Market Order Type";
+        public static string MarketOrderPlacedSuccessfully = "Market {0} Order placed successfully [Buy Amount {1}]";
+        public static string MarketOrderTestPassed = "{0} Market order test passed successfully";
+        public static string MarketOrderTestFailed = "{0} Market order test failed";
+        public static string IOCOrderTestPassed = "{0} IOC order test passed successfully";
+        public static string IOCOrderTestFailed = "{0} IOC order test failed";
+        public const string OrderVerifiedInFilledOrdersTab = "{0} Order successfully verified in Filled Orders tab";
+        public const string OrderNotFoundInFilledOrdersTab = "{0} Order not found in Filled Orders tab";
+        public const string OrderVerifiedInInactiveOrdersTab = "{0} Order successfully verified in Inactive Orders tab";
+        public const string OrderNotFoundInInactiveOrdersTab = "{0} Order not found in Inactive Orders tab";
+        public const string OrderVerifiedInTradeReportsTab = "{0} Order successfully verified in Trade Reports tab";
+        public const string OrderNotFoundInTradeReportsTab = "{0} Order not found in Trade Reports tab";
+        public static string BuyBlockTradeReportTestPassed = "{0} block trade report test passed successfully";
+        public static string BuyBlockTradeReportTestFailed = "{0} block trade report test failed";
+        public static string SellBlockTradeReportTestPassed = "{0} block trade report test passed successfully";
+        public static string SellBlockTradeReportTestFailed = "{0} block trade report test failed";
+        public const string CounterPartyErrorMsgVerified = "Verification Passed: Counterparty {0} not found";
+        public static string ProductSoldEqualsToOrderTotal = "Verification for ReceiverBTC amount passed: Product Sold price {0} is equal to OrderTotalPrice {1}";
+        public static string ProductSoldNotEqualsToOrderTotal = "Verification for ReceiverBTC amount failed: Product Sold price {0} is not equal to OrderTotalPrice {1}";
+        public const string VerifyBoughAndSoldBTCBalancesPassed = "BTC Balances been verified successfully";
+        public const string VerifyBoughAndSoldBTCBalancesFailed = "BTC Balances verification has been failed";
+        public const string VerifyBoughAndSoldUSDBalancesPassed = "USD Balances been verified successfully";
+        public const string VerifyBoughAndSoldUSDBalancesFailed = "USD Balances verification has been failed";
+        public const string VerifyFeesTextPassed = "Fees has been verified successfully";
+        public const string VerifyFeesTextFailed = "Fees verification has been failed";
+        public const string VerifyProductSoldTextPassed = "Product Sold has been verified successfully";
+        public const string VerifyProductSoldTextFailed = "Product Sold verification has been failed";
+        public const string VerifyProductBoughtTextPassed = "Product Bought has been verified successfully";
+        public const string VerifyProductBoughtTextFailed = "Product Bought verification has been failed";
+        public const string VerifyLockedInCheckBoxPassed = "Checkbox has been verified successfully";
+        public const string VerifyLockedInCheckBoxFailed = "Checkbox verification has been failed";
+        public const string VerifyCounterPartyTextPassed = "CounterParty has been verified successfully";
+        public const string VerifyCounterPartyTextFailed = "CounterParty has been verified successfully";
+        public const string VerifyDropdownInstrumentPassed = "The dropdown of Instrument has been verified successfully";
+        public const string VerifyDropdownInstrumentFailed = "The dropdown of Instrument verification has been failed";
+        public const string VerifyReportBlockTradeWindowAppeared = "Report Block Trade window has been verified successfully";
+        public const string VerifyReportBlockTradeWindowNotAppeared = "Report Block Trade window verified successfully";
+        public const string VerifyReceivedBTCAmountAfterFeeDeductingPassed = "ReceiverBTC amount {0} is equal to OrderTotal {1}. Hence Verification for ReceiverBTC amount is failed.";
+        public const string VerifyReceivedBTCAmountAfterFeeDeductingFailed = "Final amount of ReceiverBTC amount is {0} after deducting fee {1}. Hence Verification for ReceiverBTC amount is passed.";
+        public const string BuyTradeReportOrderMesgSuccess = "Your order has been successfully added";
+        public const string BuyTradeReportOrderMesgCanceled = "Your order has been Canceled";
+        public const string ReportBlockTradeMsg = "Report Block Trade";
+        public const string ProductBoughtTextMsg = "Product Bought:";
+        public const string CounterPartyIDTextMsg = "Counterparty:";
+        public const string ProductSoldTextMsg = "Product Sold:";
+        public const string FeeTextMsg = "Fees:";
+        public const string ProductBoughtTextFieldAttributeValue = "value";
+        public const string ProductSoldTextFieldAttributeValue = "value";      
+
+        // Block Trade functionality
+        public const string VerifyCounterPartyValueInConfirmBlockTradePassed = "Actual Counterparty {0} is verified with exepcted counterparty {1}";
+        public const string VerifyCounterPartyValueInConfirmBlockTradeFailed = "Actual Counterparty {0} is not verified with expectedcounterparty {1}";
+        public const string VerifyInstrumentInConfirmBlockTradePassed = "Actual instrument {0} is verified with exepcted instrument {1}";
+        public const string VerifyInstrumentInConfirmBlockTradeFailed = "Actual instrument {0} is not verified with expected instrument {1}";
+        public const string VerifyLockedInStatusInConfirmBlockTradePassed = "LockedIn status {0} is verified";
+        public const string VerifyLockedInStatusInConfirmBlockTradeFailed = "LockedIn status {0} is not verified";
+        public const string VerifyCancelButtonPassed = "The cancel Button in block trade tab is not present. Hence verification is passed";
+        public const string VerifyCancelButtonFailed = "The cancel Button in block trade tab is present. Hence verification is failed";
+        public const string VerifyTradesPassed = "Verification for trade {0} in block trade tab is passed";
+        public const string VerifyTradesFailed = "Verification for trade {0} in block trade tab is failed";            
+        public const string VerifyDateOnConfirmBlockTradePassed = "{0} Date and time successfully verified";
+        public const string VerifyDateOnConfirmBlockTradeFailed = "{0} Verification of Date and time failed";
+        public const string VerifyFinalValueEqualToProductSoldPassed = "The final Value {0} is equal to product sold {1}. Hence Verification is passed";
+        public const string VerifyFinalValueEqualToProductSoldFailed = "The final Value {0} is not equal to product sold {1}. Hence Verification is failed";
+        public const string VerifyFinalAmountAfterFeeDeductingPassed = "Final Amount {0} is equal to product Bought {1}. Hence Verification for final amount is failed";
+        public const string VerifyFinalAmountAfterFeeDeductingFailed = "Final amount is {0} after deducting fee {1}. Hence Verification for final amount is passed";
+        public const string InstrumentMsg = "BTCUSD";
+        public const string CounterPartyMsg = "CounterParty ID is {0}";
+        public const string LockedInChecked = "Yes";
+        public const string LockedInUnChecked = "No";
+        public const string BlockTradeWithLockedInTestPassedMsg = "{0} Block trade with locked in test passed";
+        public const string BlockTradeWithLockedInTestFailedMsg = "{0} Block trade with locked in test failed";
+        public const string BlockTradeWithOutLockedInTestPassedMsg = "{0} Block trade without locked in test passed";
+        public const string BlockTradeWithOutLockedInTestFailedMsg = "{0} Block trade without locked in test failed";
+        public const string VerifyBlockTradeTradesPassed = "Block trade status is coming as {0}. Hence Verification for trade {1} in block trade tab is passed";
+        public const string VerifyBlockTradeTradesFailed = "Block trade status is not coming as {0}. Hence Verification for trade {1} in block trade tab is passed";
+
+        // User Settings functionality
+        public const string CreateAPIKeyBtnIsPresent = "API Key Button is present";
+        public const string APIKeyCreatedSuccessMsg = "API Key created and verified successfully";
+        public const string APIKeyCheckboxesArePresent = "Checkboxes[Trading, deposits and withdrawls] are present";
+        public const string CreateAPIKeyFailed = "API Key creation test failed";
+        public const string DeleteAPIKeySuccessMsg = "API Key deleted and verified successfully";
+        public const string DeleteAPIKeyFailureMsg = "Verification Failed: Unable to delete API Key";
+       
+
+        // Admin functionality
+        public const string AdminLoginSuccessfullMsg = "Admin user {0} logged in successfully.";
+        public const string AdminLogoutSuccessfullMsg = "Admin user logged out successfully";
+        public const string AddPermissionSuccessMsg = "{0} permission added to the User Account [{1}]";
+
+        // Loyalty Token functionality
+        public const string LoyaltyTokenSuccessMsg = "Loyalty Token - {0} Market Order verification passed";
+        public const string LoyaltyTokenFailureMsg = "Loyalty Token - {0} Market Order verification failed";
+
+		// Common Functions loggers
+        public const string SelectExchangeFailureMsg = "User not able to select an Exchange";
+        public const string SelectAdvanceOrderFailureMsg = "Click operation failed on Advance Order link";
+        public const string FailedToRetrieveMessage = "Failed to get text of success or failure message";
+        public const string CloseAdvanceOrderSectFailureMsg = "Close Advanced Order Section Failed";
+		
+        //Landing Page functionality
+        public const string ExchangeMenuPassed = "Exchange menu verification passed";
+        public const string ExchangeMenuFailed = "Exchange menu verification failed";
+        public const string OrderBookPassed = "Order book verification passed";
+        public const string OrderBookFailed = "Order book verification failed";
+        public const string OpenOrdersPassed = "Open Orders verification passed";
+        public const string OpenOrdersFailed = "Open Orders verification failed";
+        public const string FilledOrdersPassed = "Filled Orders verification passed";
+        public const string FilledOrdersFailed = "Filled Orders verification failed";
+        public const string InactiveOrdersPassed = "Inactive Orders verification passed";
+        public const string InactiveOrdersFailed = "Inactive Orders verification failed";
+        public const string TradeReportsPassed = "Trade Reports verification passed";
+        public const string TradeReportsFailed = "Trade Reports verification failed";
+        public const string DepositStatusPassed = "Deposit Status verification passed";
+        public const string DepositStatusFailed = "Deposit Status verification failed";
+        public const string WithdrawStatusPassed = "Withdraw Status verification passed";
+        public const string WithdrawStatusFailed = "Withdraw Status verification failed";
+        public const string OpenOrderTabDetailsPassed = "Open Order Tab Details verification passed {0} {1}";
+        public const string OpenOrderTabDetailsFailed = "Open Order Tab Details verification failed";
+        public const string OpenOrdersInnerMenuLabelPassed = "Open orders inner menu label text name verification passed";
+        public const string OpenOrdersInnerMenuLabelFailed = "Open orders inner menu label text name verification failed";
+        public const string filledOrdersInnerMenuLabelPassed = "Filled orders inner menu label text name verification passed";
+        public const string filledOrdersInnerMenuLabelFailed = "Filled orders inner menu label text name verification failed";
+        public const string TradeOrdersInnerMenuLabelPassed = "Trade orders inner menu label text name verification passed";
+        public const string TradeOrdersInnerMenuLabelFailed = "Trade orders inner menu label text name verification failed";
+        public const string InactiveOrdersInnerMenuLabelPassed = "Inactive orders inner menu label text name verification passed";
+        public const string InactiveOrdersInnerMenuLabelFailed = "Inactive orders inner menu label text name verification failed";
+        public const string DeopsitStatusInnerMenuLabelPassed = "Deposit status inner menu label text name verification passed";
+        public const string DeopsitStatusInnerMenuLabelFailed = "Deposit status inner menu label text name verification failed";
+        public const string WithdrawStatusInnerMenuLabelPassed = "Withdraw status inner menu label text name verification passed";
+        public const string WithdrawStatusInnerMenuLabelFailed = "Withdraw status inner menu label text name verification failed";
+        public const string PriceChartPassed = "Price chart verification passed";
+        public const string PriceChartFailed = "Price chart verification failed";
+        public const string OrderEntryWithBuyOptionPassed = "Order entry with buy option verification passed";
+        public const string OrderEntryWithBuyOptionFailed = "Order entry with buy option verification failed";
+        public const string OrderEntryWithSellOptionPassed = "Order entry with sell option verification passed";
+        public const string OrderEntryWithSellOptionFailed = "Order entry with sell option verification failed";
+        public const string FirstPermissionGivenPassed = "{0} permission given to the user";
+        public const string FirstPermissionGivenFailed = "{0} permission given to the user";
+        public const string SecondPermissionGivenPassed = "{0} permission given to the user has been passed ";
+        public const string SecondPermissionGivenFailed = "{0} permission given to the user has been failed";
+        public const string availableBalancePassed = "Available balance verification passed";
+        public const string availableBalanceFailed = "Available balance verification failed";
+        public const string HoldPassed = "Hold verification passed";
+        public const string HoldFailed = "Hold verification failed";
+        public const string PendingDespositsPassed = "Pending desposits verification passed";
+        public const string PendingDespositsFailed = "Pending desposits verification failed";
+        public const string TotalBalancePassed = "Total balance verification passed";
+        public const string TotalBalanceFailed = "Total balance verification failed";
+        public const string OrderBookDetailsPassed = "Order book details {0}, {1}, {2} verification passed";
+        public const string OrderBookDetailsFailed = "Order book details {0}, {1}, {2} verification failed";
+        public const string RecentTradeDetailsPassed = "Recent trade details {0}, {1}, {2} verification passed";
+        public const string RecentTradeDetailsFailed = "Recent trade details {0}, {1}, {2} verification failed";
+        public const string BuyMenuOrderEntryPassed = "{0} option is present in Order Entry. Hence verification passed";
+        public const string BuyMenuOrderEntryFailed = "{0} option is not present in Order Entry. Hence verification failed";
+        public const string SellMenuOrderEntryPassed = "{0} option is present in Order Entry. Hence verification passed";
+        public const string SellMenuOrderEntryFailed = "{0} option is not present in Order Entry. Hence verification failed";
+        public const string BuySubMenuOrderEntryPassed = "Sub Menu {0}, {1}, {2} option is present under {3} in Order Entry. Hence verification passed";
+        public const string BuySubMenuOrderEntryFailed = "Sub Menu {0}, {1}, {2} option is not present under {3} in Order Entry. Hence verification failed";
+        public const string SellSubMenuOrderEntryPassed = "Sub Menu {0}, {1}, {2} option is present under {3} in Order Entry. Hence verification passed";
+        public const string SellSubMenuOrderEntryFailed = "Sub Menu {0}, {1}, {2} option is not present under {3} in Order Entry. Hence verification failed";
+        public const string cancellSellBuyAllPassed = "Sell, Buy and All button is displaying in the page. Hence verification passed";
+        public const string cancellSellBuyAllFailed = "Sell, Buy and All button is not displaying in the page. Hence verification failed";
+        public const string VerifyAdvanceOrderButtonPassed = "Advance Order button is displaying in the page. Hence verification passed";
+        public const string VerifyAdvanceOrderButtonFailed = "Advance Order button is not displaying in the page. Hence verification failed";
+        public const string VerifyOrderEntryButtonPassed = "Order Entry button is present in the page. Hence verification passed";
+        public const string VerifyOrderEntryButtonFailed = "Advance Entry button is not present in the page. Hence verification failed";
+        public const string VerifyBalancesButtonPassed = "Balances button is present in the page. Hence verification passed";
+        public const string VerifyBalancesButtonFailed = "Balances button is not present in the page. Hence verification failed";
+        public const string VerifyDetailInLandingPagePassed = "Details on landing page verification passed";
+        public const string VerifyDetailInLandingPageFailed = "Details on landing page verified failed";
+        public const string VerifyVariousOptionInPriceChartPassed = "Various options is present in price chart. Hence verification is passed";
+        public const string VerifyVariousOptionInPriceChartFailed = "Various options is not present in price chart. Hence verification is failed";
+        public const string VerifyCancelOrderButtonPassed = "Block trade order has been canceled. Hence verification is passed";
+        public const string VerifyCancelOrderButtonFailed = "Cancelling of block trade order is not completed. Hence verification is failed";
+        public const string VerifyBlockTradeWithoutLockedInCancelPassed = "Verification of block trade order cancel in open orders without lockedin is passed";
+        public const string VerifyBlockTradeWithoutLockedInCancelFailed = "Verification of block trade order cancel in open orders without lockedin is failed";
+
+        public static string BuyBlockTradeReportInOpenTabWithWorkingStatusPassed = "{0} block trade appears with status as Working and Cancel button test passed successfully";
+        public static string BuyBlockTradeReportInOpenTabWithWorkingStatusFailed = "{0} block trade is not appearing with status as Working and Cancel button test passed failed";
+
+        public const string CancelButtonPassed = "Cancel button verification is passed";
+        public const string CancelButtonFailed = "Cancel button verification is failed";
+
+        public const string OrderVerifiedInOpenOrdersTabPassed = "Block trade in open order tab verification passed";
+        public const string OrderVerifiedInOpenOrdersTabFailed = "Block trade in open order tab verification failed";
+
+
+        // Order Entry functionality
+        public const string BalancesVerifiedSuccessfully = "{0} Order balances verified successfully [Fees {1}, Order Total {2}, Net {3}]";
+        public const string BalancesVerificationFailed = "{0} Order balances verification failed";
+        public const string FeesVerificationFailed = "Fees verification failed";
+        public const string NetVerificationFailed = "Net verification failed";
+        public const string OrderTotalVerificationFailed = "Order total verification failed";
+
+        //Buy And Sell functionality
+
+        public const string MakeATransactionOptionPassed = "Make a transaction option verification passed";
+        public const string MakeATransactionOptionFailed = "Make a transaction option verification failed";
+
+        public const string ChartOptionPassed = "Chart verification passed";
+        public const string ChartOptionFailed = "Chart verification failed";
+
+        public const string BuyOptionPassed = "Buy option verification passed";
+        public const string BuyOptionFailed = "Buy option verification failed";
+
+        public const string FifthRadioButtonPassed = "Fifth radio button verification passed";
+        public const string FifthRadioButtonFailed = "Fifth radio button verification failed";
+
+        public const string FifthWithBlankValuesPassed = "Fifth with blank values verification passed";
+        public const string FifthWithBlankValuesFailed = "Fifth with blank values verification failed";
+
+        public const string TransactionOverviewDetailsPassed = "Transaction overview details verification passed";
+        public const string TransactionOverviewDetailsFailed = "Transaction overview details verification failed";
+    }
+}

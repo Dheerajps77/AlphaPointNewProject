@@ -1,0 +1,1 @@
+Release\extent -i "Results\TestResults.xml" -o Results/ -r html
